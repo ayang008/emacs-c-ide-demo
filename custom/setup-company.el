@@ -2,7 +2,7 @@
 (use-package company
   :init
   (global-company-mode 1)
-  (setq company-backends '((company-dabbrev-code company-gtags))))
+  (setq company-backends '((company-dabbrev-code company-gtags company-elisp))))
 
 ;; company-c-headers
 (use-package company-c-headers

@@ -28,6 +28,7 @@
 (require 'setup-smex)
 (require 'setup-magit)
 (require 'setup-ace-window)
+(require 'setup-org-mode)
 
 ;; function-args
 ;; (require 'function-args)
@@ -41,7 +42,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ace-window magit sr-speedbar zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))))
+    (smex ace-window magit sr-speedbar zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

@@ -17,7 +17,7 @@
 (setq-default tab-width 8)
 
 ;; Compilation
-(setq compile-command "/usr/dev_tools/trunk/bin/make -k")
+(setq compile-command "/*usr/dev_tools/trunk/bin/make -k")
 (global-set-key (kbd "<f5>") (lambda ()
                                (interactive)
                                (setq-local compilation-read-command nil)
