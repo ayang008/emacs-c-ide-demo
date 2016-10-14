@@ -58,8 +58,7 @@
 (windmove-default-keybindings)
 
 ;; move buckup and auto-save to tmp
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
+(setq make-backup-files nil)
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
@@ -71,5 +70,11 @@
 (global-set-key (kbd "C-c o") 'occur)
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
 (global-set-key (kbd "C-d") 'delete-backward-char)
+(global-set-key (kbd "C-h C-f") 'find-function)
+
+(setq initial-frame-alist '((fullscreen . maximized)))
+(delete-selection-mode 1)
+(show-paren-mode 1)
+;; (global-hl-line-mode 1)
 
 (provide 'setup-general)

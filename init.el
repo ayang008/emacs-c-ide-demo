@@ -25,10 +25,15 @@
 (require 'setup-editing)
 (require 'setup-company)
 (require 'setup-c)
+(require 'setup-js)
 (require 'setup-smex)
 (require 'setup-magit)
 (require 'setup-ace-window)
 (require 'setup-org-mode)
+(require 'setup-theme)
+(require 'setup-hungry-delete)
+(require 'setup-smartparens)
+(require 'setup-recentf)
 
 ;; function-args
 ;; (require 'function-args)
@@ -42,7 +47,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (smex ace-window magit sr-speedbar zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))))
+    (smartparens hungry-delete monokai-theme smex ace-window magit sr-speedbar zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
