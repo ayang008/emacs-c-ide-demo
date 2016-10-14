@@ -8,5 +8,5 @@
 *** TODO gid加入set_key，由进程参数传入
 *** DONE 使用自定义的线程标识代替thread_id
     CLOSED: [2016-10-20 Thu 12:21]
-*** TODO login/scene的conn移到login/scene_mgr中，简化stop操作
-*** TODO login/client_mgr使用template T代替conn
+*** DONE login/client_mgr使用template T代替conn
+    CLOSED: [2016-10-14 Fri 15:56]
