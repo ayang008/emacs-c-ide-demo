@@ -1,6 +1,8 @@
 (require 'package)
 (add-to-list 'package-archives
-         '("melpa" . "http://melpa.org/packages/") t)
+             '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives
+             '("melpa-cn" . "http://elpa.zilongshanren.com/melpa/") t)
 
 (package-initialize)
 
@@ -19,21 +21,24 @@
 (if (version< emacs-version "24.4")
     (require 'setup-ivy-counsel)
   (require 'setup-helm)
-  (require 'setup-helm-gtags))
+  (require 'setup-helm-gtags)
+  (require 'setup-helm-ag))
 ;; (require 'setup-ggtags)
 (require 'setup-cedet)
 (require 'setup-editing)
 (require 'setup-company)
+(require 'setup-flycheck)
 (require 'setup-c)
 (require 'setup-js)
 (require 'setup-smex)
 (require 'setup-magit)
 (require 'setup-ace-window)
-(require 'setup-org-mode)
+(require 'setup-org)
 (require 'setup-theme)
 (require 'setup-hungry-delete)
 (require 'setup-smartparens)
 (require 'setup-recentf)
+(require 'setup-yasnippet)
 
 ;; function-args
 ;; (require 'function-args)
@@ -47,7 +52,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (smartparens hungry-delete monokai-theme smex ace-window magit sr-speedbar zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))))
+    (auto-yasnippet flycheck smartparens hungry-delete monokai-theme smex ace-window magit sr-speedbar zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

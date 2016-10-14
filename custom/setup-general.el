@@ -77,4 +77,10 @@
 (show-paren-mode 1)
 ;; (global-hl-line-mode 1)
 
+(defun remove-dos-eol ()
+  "Replace DOS eolns CR LF with Unix eolns CR"
+  (interactive)
+  (goto-char (point-min))
+  (while (search-forward "\r" nil t) (replace-match "")))
+
 (provide 'setup-general)
