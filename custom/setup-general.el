@@ -17,10 +17,16 @@
 (setq-default tab-width 8)
 
 ;; Compilation
+(setq compile-command "/usr/dev_tools/trunk/bin/make -k")
 (global-set-key (kbd "<f5>") (lambda ()
                                (interactive)
                                (setq-local compilation-read-command nil)
                                (call-interactively 'compile)))
+
+;; Jump to emacs.d/custom dired
+(global-set-key (kbd "<f2>") (lambda ()
+                               (interactive)
+                               (find-file "~/.emacs.d/custom")))
 
 ;; setup GDB
 (setq
@@ -29,7 +35,10 @@
 
  ;; Non-nil means display source file containing the main routine at startup
  gdb-show-main t
- )
+
+ ;; gdb command
+ gud-gdb-command-name "/usr/dev_tools/trunk-el6/bin/gdb -i=mi"
+)
 
 ;; Package: projejctile
 (use-package projectile
@@ -53,5 +62,14 @@
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
+
+;; fix putty DEL after setting The Backspace key to Control-H
+;; and Initial state of cursor keys to Application
+(normal-erase-is-backspace-mode 1)
+
+;; global keys
+(global-set-key (kbd "C-c o") 'occur)
+(global-set-key (kbd "C-x C-b") 'buffer-menu)
+(global-set-key (kbd "C-d") 'delete-backward-char)
 
 (provide 'setup-general)

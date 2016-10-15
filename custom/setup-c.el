@@ -21,9 +21,9 @@
 
 (use-package cc-mode
   :init
-  (define-key c-mode-map (kbd "TAB") 'company-complete)
-  (define-key c++-mode-map (kbd "TAB") 'company-complete)
-  (define-key c-mode-map (kbd "C-x l") 'goto-line)
-  (define-key c++-mode-map (kbd "C-x l") 'goto-line))
+  ;;(define-key c++-mode-map (kbd "TAB") 'company-complete)
+  (define-key c++-mode-map (kbd "C-x l") 'goto-line)
+  (define-key c++-mode-map (kbd "C-d") 'c-hungry-backspace)
+  (define-key c++-mode-map (kbd "C-c C-c") 'comment-or-uncomment-region))
 
 (provide 'setup-c)
