@@ -1,5 +1,4 @@
 (menu-bar-mode -1)
-(tool-bar-mode -1)
 
 (setq gc-cons-threshold 100000000)
 (setq inhibit-startup-message t)
@@ -14,8 +13,8 @@
 ;; use space to indent by default
 (setq-default indent-tabs-mode nil)
 
-;; set appearance of a tab that is represented by 4 spaces
-(setq-default tab-width 4)
+;; set appearance of a tab that is represented by 8 spaces
+(setq-default tab-width 8)
 
 ;; Compilation
 (global-set-key (kbd "<f5>") (lambda ()
@@ -31,14 +30,6 @@
  ;; Non-nil means display source file containing the main routine at startup
  gdb-show-main t
  )
-
-;; company
-(use-package company
-  :init
-  (global-company-mode 1)
-  (delete 'company-semantic company-backends))
-;; (define-key c-mode-map  [(control tab)] 'company-complete)
-;; (define-key c++-mode-map  [(control tab)] 'company-complete)
 
 ;; Package: projejctile
 (use-package projectile
@@ -56,5 +47,11 @@
 ;; activate whitespace-mode to view all whitespace characters
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 (windmove-default-keybindings)
+
+;; move buckup and auto-save to tmp
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
 (provide 'setup-general)

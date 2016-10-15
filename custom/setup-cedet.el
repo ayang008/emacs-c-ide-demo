@@ -15,6 +15,8 @@
 (add-hook 'c-mode-hook 'alexott/cedet-hook)
 (add-hook 'c++-mode-hook 'alexott/cedet-hook)
 
+;;(semantic-add-system-include "/usr/dev_tools/prebuilts/linux-x86_64/boost-1_61_0-endeca1/include" 'c++-mode)
+
 ;; Enable EDE only in C/C++
 (require 'ede)
 (global-ede-mode)
