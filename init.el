@@ -24,6 +24,7 @@
 (require 'setup-cedet)
 (require 'setup-editing)
 (require 'setup-company)
+(require 'setup-c)
 (require 'setup-smex)
 
 ;; function-args
