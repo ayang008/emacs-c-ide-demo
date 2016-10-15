@@ -26,7 +26,6 @@
 (require 'setup-company)
 (require 'setup-smex)
 
-
 ;; function-args
 ;; (require 'function-args)
 ;; (fa-config-default)
