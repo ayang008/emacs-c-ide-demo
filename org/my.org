@@ -2,3 +2,5 @@
 ** 设计优化
    所有使用service_thread的类全部由外部提供，包括player_player
    log TLOG等也加入标签，如BASE
+   conn传入名字，放弃使用ip
+   conn目前使用名字作为hash值，注意不重复，或者考虑使用gid
