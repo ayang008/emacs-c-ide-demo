@@ -33,6 +33,7 @@
       (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
       (define-key helm-gtags-mode-map (kbd "M-;") 'helm-gtags-find-rtag)
       (define-key helm-gtags-mode-map (kbd "ESC o") 'helm-gtags-find-files)
+      (define-key helm-gtags-mode-map (kbd "ESC p") 'helm-gtags-find-pattern)
       (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
       (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history))))
 
