@@ -13,15 +13,35 @@
 ;; use space to indent by default
 (setq-default indent-tabs-mode nil)
 
-;; set appearance of a tab that is represented by 8 spaces
-(setq-default tab-width 8)
+;; set appearance of a tab that is represented by 4 spaces
+(setq-default tab-width 4)
 
 ;; Compilation
-(setq compile-command "/*usr/dev_tools/trunk/bin/make -k")
+(setq compile-command "/usr/dev_tools/trunk/bin/make -k")
 (global-set-key (kbd "<f5>") (lambda ()
                                (interactive)
-                               (setq-local compilation-read-command nil)
-                               (call-interactively 'compile)))
+                               (let ((path default-directory))
+                                 (while (and (not (member "Makefile" (directory-files path))) (not (eq path "/")))
+                                   (setq path (parent-directory-name path)))
+                                 (unless (eq path "/") (progn
+                                                         (setq-local compilation-read-command nil)
+                                                         (cd path)
+                                                         (if (y-or-n-p "Make clean before make?")
+                                                             (setq compile-command "/usr/dev_tools/trunk/bin/make clobber; /usr/dev_tools/trunk/bin/make -j4;")
+                                                           (setq compile-command "/usr/dev_tools/trunk/bin/make compile -j4"))
+                                                         (call-interactively 'compile))))))
+
+;; Test
+(setq test-command "/usr/dev_tools/trunk/bin/make test")
+(global-set-key (kbd "<f6>") (lambda ()
+                               (interactive)
+                               (let ((path default-directory))
+                                 (while (and (not (member "Makefile" (directory-files path))) (not (eq path "/")))
+                                   (setq path (parent-directory-name path)))
+                                 (unless (eq path "/") (progn
+                                                         (setq-local compilation-read-command nil)
+                                                         (cd path)
+                                                         (shell-command test-command))))))
 
 ;; Jump to emacs.d/custom dired
 (global-set-key (kbd "<f2>") (lambda ()
