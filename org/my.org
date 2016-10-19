@@ -1,3 +1,4 @@
 * 服务器
 ** 设计优化
    所有使用service_thread的类全部由外部提供，包括player_player
+   log TLOG等也加入标签，如BASE
