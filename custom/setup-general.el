@@ -17,10 +17,10 @@
 (setq-default tab-width 4)
 
 ;; Compilation
-(setq compile-command "/usr/dev_tools/trunk/bin/make -k")
+(setq compile-command "/usr/dev_tools/trunk/bin/make -k -j4")
 (global-set-key (kbd "<f5>") (lambda ()
                                (interactive)
-                               (save-some-buffers)
+                               (save-some-buffers t)
                                (let ((path default-directory))
                                  (while (and (not (member "Makefile" (directory-files path))) (not (eq path "/")))
                                    (setq path (parent-directory-name path)))
@@ -36,7 +36,7 @@
 (setq test-command "/usr/dev_tools/trunk/bin/make test")
 (global-set-key (kbd "<f6>") (lambda ()
                                (interactive)
-                               (save-some-buffers)
+                               (save-some-buffers t)
                                (let ((path default-directory))
                                  (while (and (not (member "Makefile" (directory-files path))) (not (eq path "/")))
                                    (setq path (parent-directory-name path)))
