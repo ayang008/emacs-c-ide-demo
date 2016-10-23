@@ -17,7 +17,6 @@
 (setq-default tab-width 4)
 
 ;; Compilation
-(setq compile-command "/usr/dev_tools/trunk/bin/make -k -j4")
 (global-set-key (kbd "<f5>") (lambda ()
                                (interactive)
                                (save-some-buffers t)
@@ -29,7 +28,7 @@
                                                          (cd path)
                                                          (if (y-or-n-p "Make clean before make?")
                                                              (setq compile-command "/usr/dev_tools/trunk/bin/make clobber; /usr/dev_tools/trunk/bin/make -j4;")
-                                                           (setq compile-command "/usr/dev_tools/trunk/bin/make compile -j4"))
+                                                           (setq compile-command "/usr/dev_tools/trunk/bin/make -j4"))
                                                          (call-interactively 'compile))))))
 
 ;; Test
