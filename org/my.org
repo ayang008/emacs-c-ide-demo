@@ -1,10 +1,12 @@
 * 服务器
 ** 设计优化
-*** TODO 所有使用service_thread的类全部由外部提供，包括player_player
 *** DONE log TLOG等也加入标签，如NONE
     CLOSED: [2016-10-20 Thu 12:20]
 *** TODO conn传入名字，放弃使用ip
-*** TODO conn目前使用名字作为hash值，注意不重复，或者考虑使用gid
+*** DONE conn目前使用名字作为hash值，注意不重复，或者考虑使用gid
+    CLOSED: [2016-10-24 Mon 10:19]
 *** TODO gid加入set_key，由进程参数传入
 *** DONE 使用自定义的线程标识代替thread_id
     CLOSED: [2016-10-20 Thu 12:21]
+*** TODO login/scene的conn移到login/scene_mgr中，简化stop操作
+*** TODO login/client_mgr使用template T代替conn
