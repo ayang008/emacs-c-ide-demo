@@ -1,0 +1,50 @@
+* 程序组
+** 服务器
+*** TODO 玩家角色使用gid作为主键,目前使用的是名字 [0%]
+:PROPERTIES: 
+:COOKIE_DATA: todo recursive
+:END:
+**** TODO 角色类中加入gid以及获取接口,创建角色时给予新的gid
+**** TODO 数据库角色表加入gid
+**** TODO 全局将角色名字作为key的结构改为使用gid,包括协议
+*** TODO 聊天 [0%]
+:PROPERTIES: 
+:COOKIE_DATA: todo recursive
+:END:
+**** TODO 聊天服务器进程,并与scene连接
+**** TODO 全世界频道(无过滤)
+**** TODO 增加频道(过滤)
+***** TODO 世界频道(本scene)
+***** TODO 私人频道(优先本scene查找)
+***** TODO 好友频道
+***** TODO 工会频道
+**** TODO 频率限制以及高频率衰减
+**** TODO 脏字过滤
+**** TODO 服务器富文本
+*** TODO 好友
+*** TODO 工会
+*** TODO 战斗检验
+*** TODO 集成测试
+*** TODO 压力测试
+** 客户端
+*** TODO 通用
+**** 
+*** TODO 战斗
+**** TODO 地图初始动画播放
+** 网站
+*** TODO 文档
+**** TODO 客户端开发环境搭建
+**** TODO 战斗地图配置
+***** TODO 基础配置
+***** TODO 配置塔
+***** TODO 配置怪物
+****** TODO 配置路线
+****** TODO 配置怪物
+**** TODO 配置表说明
+***** TODO actor表
+***** TODO skill表
+***** TODO buff表
+**** TODO 碰撞以及碰撞组
+*** TODO 工具
+*** TODO 人员联系表
+

@@ -11,13 +11,7 @@
                                (find-file (file-name-as-directory (concat user-emacs-directory "org")))))
 
 (setq org-todo-keywords
-      '((sequence "TODO" "INPROGRESS" "|" "DONE")))
-
-(setq org-todo-keyword-faces
-      '(("INPROGRESS" . "yellow")))
-
-;; (setq org-todo-keywords
-;;      '((type "Amber" "Aaron" "Linc" "|" "DONE")))
+      '((type "TODO" "Amber(m)" "Aaron(a)" "Linc(l)" "|" "DONE")))
 
 (setq org-startup-indented t)
 
@@ -25,5 +19,12 @@
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (setq org-log-done t)
+
+(defun org-summary-todo (n-done n-not-done)
+  "Switch entry to DONE when all subentries are done, to TODO otherwise."
+  (let (org-log-done org-log-states)   ; turn off logging
+    (org-todo (if (= n-not-done 0) "DONE" "TODO"))))
+
+(add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
 (provide 'setup-org)
