@@ -2,10 +2,12 @@
 ** 设计优化
 *** DONE log TLOG等也加入标签，如NONE
     CLOSED: [2016-10-20 Thu 12:20]
-*** TODO conn传入名字，放弃使用ip
+*** DONE conn传入名字，放弃使用ip
+    CLOSED: [2016-10-26 Wed 13:07]
 *** DONE conn目前使用名字作为hash值，注意不重复，或者考虑使用gid
     CLOSED: [2016-10-24 Mon 10:19]
-*** TODO gid加入set_key，由进程参数传入
+*** DONE gid加入set_key，由进程参数传入
+    CLOSED: [2016-10-26 Wed 13:31]
 *** DONE 使用自定义的线程标识代替thread_id
     CLOSED: [2016-10-20 Thu 12:21]
 *** DONE login/client_mgr使用template T代替conn
