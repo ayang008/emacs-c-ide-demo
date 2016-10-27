@@ -2,38 +2,112 @@
 
 * 开发环境搭建
 
-** 下载并安装编辑器
-[[http://cocostudio.download.appget.cn/CocosCreator/v1.3.0/CocosCreator_v1.3.0_2016102502_setup.exe][下载链接]]
+** 编辑器
+
+[[http://cocostudio.download.appget.cn/CocosCreator/v1.3.0/CocosCreator_v1.3.0_2016102502_setup.exe][点击下载]]
+
+运行下载的安装文件安装编辑器
 
 ** 注册bitbucket帐号(如果已经有bitbucket帐号,此步可以忽略)
-- [[https://bitbucket.org][bitbucket]]
 
-** 下载并安装git客户端
-- [[https://git-scm.com/download/win][下载链接]]
-- 安装,一路确认
-- 配置git用户名,在"开始"->"搜索程序和文件"中输入git config --global user.name "你的bitbucket帐号",回车
-- 配置git邮箱,在"开始"->"搜索程序和文件"中输入git config --global user.email "你常用的邮箱",回车
+[[https://bitbucket.org][bitbucket]]
+
+点击上面的链接注册bitbucket帐号,将帐号发给aaron加入项目组
+
+** git客户端
+
+[[https://git-scm.com/download/win][点击下载]]
+
+运行下载的安装文件安装git
+
+在"开始"->"搜索程序和文件"中输入git config --global user.name "你的bitbucket帐号",回车
+
+在"开始"->"搜索程序和文件"中输入git config --global user.email "你常用的邮箱",回车
 
 ** 使用git下载项目工程
-- 打开git gui
-- 选择Clone Existing Repository
-- Source Location填入项目地址(其中username为你的bitbucket帐号):https://username@bitbucket.org/noragame/game_client_cc.git
-- Target Directory填入项目下载到的目录(如:d:\client)
-- 点击Clone确认下载
+
+ 打开git gui
+
+ 选择Clone Existing Repository
+
+ Source Location填入项目地址(username为你的bitbucket帐号):https://username@bitbucket.org/noragame/game_client_cc.git
+
+ Target Directory填入项目下载到的目录(如:d:\client)
+
+ 点击Clone确认下载
 
 ** 使用编辑器打开项目
-- 打开编辑器(Cocos creator)
-- 选择打开其他项目,选择项目路径(如:d:\client)并选择文件夹
+
+ 打开编辑器(Cocos creator)
+
+ 选择打开其他项目,选择项目路径(如:d:\client)并点击选择文件夹
   
 
 * 编辑器资源
 
 ** 通用
-- [[http://www.cocos.com/docs/creator/index.html][用户文档]]
-- [[http://forum.cocos.com/][论坛]]
+
+ [[http://www.cocos.com/docs/creator/index.html][用户文档]]
+
+ [[http://forum.cocos.com/][论坛]]
 
 ** 程序相关 
-- [[http://www.cocos.com/docs/creator/api/index.html][API]]
-- [[http://www.supersuraccoon-cocos2d.com/cocos_creator/cocos_creator.html][Cocos Creator 之旅]]
 
+ [[http://www.cocos.com/docs/creator/api/index.html][API]]
 
+ [[http://www.supersuraccoon-cocos2d.com/cocos_creator/cocos_creator.html][Cocos Creator 之旅]]
+
+* 项目管理
+** 服务器
+*** TODO 玩家角色使用gid作为主键,目前使用的是名字 [0%]
+- [ ] 角色类中加入gid以及获取接口,创建角色时给予新的gid
+- [ ] 数据库角色表加入gid
+- [ ] 全局将角色名字作为key的结构改为使用gid,包括协议
+*** TODO 脏字过滤
+加入脏字过滤功能类
+
+*** TODO 聊天 [0%]
+- [ ] 聊天服务器进程,并与scene连接
+
+- [ ] 全世界频道(无过滤)
+
+- [ ] 增加频道(过滤)
+
+  - [ ] 世界频道(本scene)
+
+  - [ ] 私人频道(优先本scene查找)
+
+  - [ ] 好友频道
+
+  - [ ] 工会频道
+
+- [ ] 频率限制以及高频率衰减
+
+- [ ] 应用脏字过滤
+
+- [ ] 服务器富文本
+*** TODO 好友
+*** TODO 工会
+*** TODO 战斗检验
+*** TODO 集成测试
+*** TODO 压力测试
+** 客户端
+*** TODO 通用
+
+*** TODO 战斗
+地图初始动画播放
+** 网站
+*** TODO 文档
+**** TODO 战斗地图配置 [0%]
+- [ ] 基础配置
+- [ ] 配置塔
+- [ ] 配置怪物
+  - [ ] 配置路线
+  - [ ] 配置怪物
+**** TODO 配置表说明 [0%]
+- [ ] actor表
+- [ ] skill表
+- [ ] buff表
+**** TODO 碰撞以及碰撞组
+*** TODO 工具
+*** TODO 人员联系表
