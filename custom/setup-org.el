@@ -10,6 +10,17 @@
                                (interactive)
                                (find-file (file-name-as-directory (concat user-emacs-directory "org")))))
 
+(setq org-todo-keywords
+      '((sequence "TODO" "INPROGRESS" "|" "DONE")))
+
+(setq org-todo-keyword-faces
+      '(("INPROGRESS" . "yellow")))
+
+;; (setq org-todo-keywords
+;;      '((type "Amber" "Aaron" "Linc" "|" "DONE")))
+
+(setq org-startup-indented t)
+
 (setq org-src-fontify-natively t)
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
