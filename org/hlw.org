@@ -1,4 +1,4 @@
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/static/org.css" />
+#+SETUPFILE: theme-bigblow.setup
 
 * 开发环境搭建
 
