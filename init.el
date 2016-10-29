@@ -1,3 +1,4 @@
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
@@ -31,6 +32,7 @@
 ;; (require 'setup-flycheck)
 (require 'setup-c)
 (require 'setup-js)
+(require 'setup-web)
 (require 'setup-smex)
 (require 'setup-magit)
 (require 'setup-ace-window)
