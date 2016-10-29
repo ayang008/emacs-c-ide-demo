@@ -1,48 +1,5 @@
 #+SETUPFILE: theme-bigblow.setup
 
-* 开发环境搭建
-
-** 编辑器
-
-[[http://cocostudio.download.appget.cn/CocosCreator/v1.3.0/CocosCreator_v1.3.0_2016102502_setup.exe][点击下载]]
-
-运行下载的安装文件安装编辑器
-
-** 注册bitbucket帐号(如果已经有bitbucket帐号,此步可以忽略)
-
-[[https://bitbucket.org][bitbucket]]
-
-点击上面的链接注册bitbucket帐号,将帐号发给aaron加入项目组
-
-** git客户端
-
-[[https://git-scm.com/download/win][点击下载]]
-
-运行下载的安装文件安装git
-
-在"开始"->"搜索程序和文件"中输入git config --global user.name "你的bitbucket帐号",回车
-
-在"开始"->"搜索程序和文件"中输入git config --global user.email "你常用的邮箱",回车
-
-** 使用git下载项目工程
-
- 打开git gui
-
- 选择Clone Existing Repository
-
- Source Location填入项目地址(username为你的bitbucket帐号):https://username@bitbucket.org/noragame/game_client_cc.git
-
- Target Directory填入项目下载到的目录(如:d:\client)
-
- 点击Clone确认下载
-
-** 使用编辑器打开项目
-
- 打开编辑器(Cocos creator)
-
- 选择打开其他项目,选择项目路径(如:d:\client)并点击选择文件夹
-  
-
 * 编辑器资源
 
 ** 通用
@@ -111,4 +68,57 @@
 - [ ] buff表
 **** TODO 碰撞以及碰撞组
 *** TODO 工具
-*** TODO 人员联系表
+*** DONE 人员联系表
+CLOSED: [2016-10-29 Sat 17:56]
+
+
+* 开发环境搭建
+
+** 编辑器
+
+[[http://cocostudio.download.appget.cn/CocosCreator/v1.3.0/CocosCreator_v1.3.0_2016102502_setup.exe][点击下载]]
+
+运行下载的安装文件安装编辑器
+
+** 注册bitbucket帐号(如果已经有bitbucket帐号,此步可以忽略)
+
+[[https://bitbucket.org][bitbucket]]
+
+点击上面的链接注册bitbucket帐号,将帐号发给aaron加入项目组
+
+** git客户端
+
+[[https://git-scm.com/download/win][点击下载]]
+
+运行下载的安装文件安装git
+
+在"开始"->"搜索程序和文件"中输入git config --global user.name "你的bitbucket帐号",回车
+
+在"开始"->"搜索程序和文件"中输入git config --global user.email "你常用的邮箱",回车
+
+** 使用git下载项目工程
+
+ 打开git gui
+
+ 选择Clone Existing Repository
+
+ Source Location填入项目地址(username为你的bitbucket帐号):https://username@bitbucket.org/noragame/game_client_cc.git
+
+ Target Directory填入项目下载到的目录(如:d:\client)
+
+ 点击Clone确认下载
+
+** 使用编辑器打开项目
+
+ 打开编辑器(Cocos creator)
+
+ 选择打开其他项目,选择项目路径(如:d:\client)并点击选择文件夹
+  
+
+
+* 开发组人员
+| 姓名   | RTX   |        qq |        手机 |
+|--------+-------+-----------+-------------|
+| 林佳   | Amber |   6375617 | 18601339040 |
+| 安洋   | Aaron |  75335137 | 18601369184 |
+| 何旭杰 | Linc  | 279989589 |             |
