@@ -42,6 +42,7 @@
 (require 'setup-smartparens)
 (require 'setup-recentf)
 (require 'setup-yasnippet)
+(require 'setup-protobuf)
 
 ;; function-args
 ;; (require 'function-args)
