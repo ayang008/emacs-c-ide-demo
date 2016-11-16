@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>hlw</title>
-<!-- 2016-11-16 Wed 10:42 -->
+<!-- 2016-11-16 Wed 18:26 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
@@ -219,7 +219,10 @@ for the JavaScript code in this tag.
 <li><a href="#sec-4-2-3">4.2.3. <span class="todo TODO">TODO</span> 地图初始动画播放</a></li>
 <li><a href="#sec-4-2-4">4.2.4. <span class="done DONE">DONE</span> 技能多子弹(单数)</a></li>
 <li><a href="#sec-4-2-5">4.2.5. <span class="done DONE">DONE</span> 最多穿透数量,和最大距离</a></li>
-<li><a href="#sec-4-2-6">4.2.6. <span class="todo TODO">TODO</span> 技能子弹,上子弹</a></li>
+<li><a href="#sec-4-2-6">4.2.6. <span class="done DONE">DONE</span> 技能逻辑修改:不再有选择技能逻辑,所有技能都可以被释放.当多个技能都可用时,一个一个释放.</a></li>
+<li><a href="#sec-4-2-7">4.2.7. <span class="done DONE">DONE</span> 技能子弹,上子弹</a></li>
+<li><a href="#sec-4-2-8">4.2.8. <span class="todo TODO">TODO</span> 技能机制,目标选择<code>[54%]</code></a></li>
+<li><a href="#sec-4-2-9">4.2.9. <span class="todo DL">DL</span> 塔座放置时自动调整位置到最近的格子上</a></li>
 </ul>
 </li>
 <li><a href="#sec-4-3">4.3. 网站</a>
@@ -395,12 +398,111 @@ PC和手机都可以访问
 </div>
 <div id="outline-container-sec-4-2-4" class="outline-4">
 <h4 id="sec-4-2-4"><span class="section-number-4">4.2.4</span> <span class="done DONE">DONE</span> 技能多子弹(单数)</h4>
+<div class="outline-text-4" id="text-4-2-4">
+<p>
+列:count 子弹数
+</p>
+
+<p>
+列:radians 子弹偏离弧度
+</p>
+</div>
 </div>
 <div id="outline-container-sec-4-2-5" class="outline-4">
 <h4 id="sec-4-2-5"><span class="section-number-4">4.2.5</span> <span class="done DONE">DONE</span> 最多穿透数量,和最大距离</h4>
+<div class="outline-text-4" id="text-4-2-5">
+<p>
+列:max_hit 最多击中数量
+</p>
+
+<p>
+列:max_distance 最大距离
+</p>
+</div>
 </div>
 <div id="outline-container-sec-4-2-6" class="outline-4">
-<h4 id="sec-4-2-6"><span class="section-number-4">4.2.6</span> <span class="todo TODO">TODO</span> 技能子弹,上子弹</h4>
+<h4 id="sec-4-2-6"><span class="section-number-4">4.2.6</span> <span class="done DONE">DONE</span> 技能逻辑修改:不再有选择技能逻辑,所有技能都可以被释放.当多个技能都可用时,一个一个释放.</h4>
+</div>
+<div id="outline-container-sec-4-2-7" class="outline-4">
+<h4 id="sec-4-2-7"><span class="section-number-4">4.2.7</span> <span class="done DONE">DONE</span> 技能子弹,上子弹</h4>
+<div class="outline-text-4" id="text-4-2-7">
+<p>
+列:max_bullet 最大子弹个数
+</p>
+
+<p>
+列:refill_time 填充一个子弹的时间
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-2-8" class="outline-4">
+<h4 id="sec-4-2-8"><span class="section-number-4">4.2.8</span> <span class="todo TODO">TODO</span> 技能机制,目标选择<code>[54%]</code></h4>
+<div class="outline-text-4" id="text-4-2-8">
+</div><ol class="org-ol"><li><a id="sec-4-2-8-1" name="sec-4-2-8-1"></a><span class="done DONE">DONE</span> 范围内最远的敌人<br  /><div class="outline-text-5" id="text-4-2-8-1">
+<p>
+target_type: FAREST_ENEMY
+</p>
+</div>
+</li>
+<li><a id="sec-4-2-8-2" name="sec-4-2-8-2"></a><span class="done DONE">DONE</span> 范围内血量(百分比)最多的敌人<br  /><div class="outline-text-5" id="text-4-2-8-2">
+<p>
+target_type: MOST_HP_ENEMY MOST_HP_PERCENT_ENEMY
+</p>
+</div>
+</li>
+<li><a id="sec-4-2-8-3" name="sec-4-2-8-3"></a><span class="done DONE">DONE</span> 范围内血量(百分比)最少的敌人<br  /><div class="outline-text-5" id="text-4-2-8-3">
+<p>
+target_type: LEAST_HP_ENEMY LEAST_HP_PERCENT_ENEMY
+</p>
+</div>
+</li>
+<li><a id="sec-4-2-8-4" name="sec-4-2-8-4"></a><span class="done DONE">DONE</span> 范围内移动速度(当前值)最快的敌人<br  /><div class="outline-text-5" id="text-4-2-8-4">
+<p>
+target_type: FASTEST_ENEMY
+</p>
+</div>
+</li>
+<li><a id="sec-4-2-8-5" name="sec-4-2-8-5"></a><span class="done DONE">DONE</span> 范围内移动速度(当前值)最慢的敌人<br  /><div class="outline-text-5" id="text-4-2-8-5">
+<p>
+target_type: SLOWEST_ENEMY
+</p>
+</div>
+</li>
+<li><a id="sec-4-2-8-6" name="sec-4-2-8-6"></a><span class="todo Aaron">Aaron</span> 范围内目标体型最大的敌人<br  /></li>
+<li><a id="sec-4-2-8-7" name="sec-4-2-8-7"></a><span class="todo Aaron">Aaron</span> 范围内目标体型最小的敌人<br  /></li>
+<li><a id="sec-4-2-8-8" name="sec-4-2-8-8"></a><span class="todo Aaron">Aaron</span> 范围内移动路程最短的敌人<br  /></li>
+<li><a id="sec-4-2-8-9" name="sec-4-2-8-9"></a><span class="todo Aaron">Aaron</span> 范围内移动路程最远的敌人<br  /></li>
+<li><a id="sec-4-2-8-10" name="sec-4-2-8-10"></a><span class="done DONE">DONE</span> 范围内特定标签的敌人<br  /><div class="outline-text-5" id="text-4-2-8-10">
+<p>
+target_type: ENEMY_HAS_TAG
+</p>
+
+<p>
+target_type_arg(新加列): tag
+</p>
+</div>
+</li>
+<li><a id="sec-4-2-8-11" name="sec-4-2-8-11"></a><span class="todo Aaron">Aaron</span> 范围内特定标签的友军<br  /></li></ol>
+</div>
+<div id="outline-container-sec-4-2-9" class="outline-4">
+<h4 id="sec-4-2-9"><span class="section-number-4">4.2.9</span> <span class="todo DL">DL</span> 塔座放置时自动调整位置到最近的格子上</h4>
+<div class="outline-text-4" id="text-4-2-9">
+<p>
+背景尺寸 1334 x 768
+</p>
+
+<p>
+按左上角为 (0, 0) 点算,第一个格子的左上角位于 (147, 80)
+</p>
+
+<p>
+格子大小 80 x 80
+</p>
+
+<p>
+所有格子组成的区域是 1040 x 560
+</p>
+</div>
 </div>
 </div>
 
@@ -632,7 +734,7 @@ URL填入项目地址 -&gt; 确定
 <h3 id="sec-6-4"><span class="section-number-3">6.4</span> GIT</h3>
 <div class="outline-text-3" id="text-6-4">
 <p>
-<a href="http://www.runoob.com/git/git-tutorial.html">GIT中文教程</a>
+<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/">GIT中文教程</a>
 </p>
 </div>
 </div>
@@ -711,7 +813,7 @@ URL填入项目地址 -&gt; 确定
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2016-11-16 Wed 10:42</p>
+<p class="date">Created: 2016-11-16 Wed 18:26</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>

@@ -1,4 +1,5 @@
 #+SETUPFILE: theme-bigblow.setup
+#+OPTIONS: ^:nil
 
 * 通用资料
 
@@ -57,8 +58,46 @@ PC和手机都可以访问
 *** TODO 路径配置怪物部分从编辑器移出到新表，并加入血量和速度
 *** TODO 地图初始动画播放
 *** DONE 技能多子弹(单数)
+列:count 子弹数
+
+列:radians 子弹偏离弧度
 *** DONE 最多穿透数量,和最大距离
-*** Aaron 技能子弹,上子弹
+列:max_hit 最多击中数量
+
+列:max_distance 最大距离
+*** DONE 技能逻辑修改:不再有选择技能逻辑,所有技能都可以被释放.当多个技能都可用时,一个一个释放.
+*** DONE 技能子弹,上子弹
+列:max_bullet 最大子弹个数
+
+列:refill_time 填充一个子弹的时间
+*** TODO 技能机制,目标选择[54%]
+**** DONE 范围内最远的敌人
+target_type: FAREST_ENEMY
+**** DONE 范围内血量(百分比)最多的敌人
+target_type: MOST_HP_ENEMY MOST_HP_PERCENT_ENEMY
+**** DONE 范围内血量(百分比)最少的敌人
+target_type: LEAST_HP_ENEMY LEAST_HP_PERCENT_ENEMY
+**** DONE 范围内移动速度(当前值)最快的敌人
+target_type: FASTEST_ENEMY
+**** DONE 范围内移动速度(当前值)最慢的敌人
+target_type: SLOWEST_ENEMY
+**** Aaron 范围内目标体型最大的敌人
+**** Aaron 范围内目标体型最小的敌人
+**** Aaron 范围内移动路程最短的敌人
+**** Aaron 范围内移动路程最远的敌人
+**** DONE 范围内特定标签的敌人
+target_type: ENEMY_HAS_TAG
+
+target_type_arg(新加列): tag
+**** Aaron 范围内特定标签的友军
+*** DL 塔座放置时自动调整位置到最近的格子上
+背景尺寸 1334 x 768
+
+按左上角为 (0, 0) 点算,第一个格子的左上角位于 (147, 80)
+
+格子大小 80 x 80
+
+所有格子组成的区域是 1040 x 560
 
 ** 网站
 *** TODO 文档
@@ -166,7 +205,7 @@ URL填入项目地址 -> 确定
 
 ** GIT
 
-[[http://www.runoob.com/git/git-tutorial.html][GIT中文教程]]
+[[http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/][GIT中文教程]]
 
 
 * 开发组人员

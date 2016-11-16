@@ -11,14 +11,14 @@
                                (find-file (file-name-as-directory (concat user-emacs-directory "org")))))
 
 (setq org-todo-keywords
-      '((type "TODO" "Amber(m)" "Aaron(a)" "Linc(l)" "DL(d)" "|" "DONE")))
+      '((type "TODO" "Amber(m)" "Aaron(a)" "Linc(l)" "DL(u)" "|" "DONE")))
 
 (setq org-startup-indented t)
 
 (setq org-src-fontify-natively t)
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
-;(setq org-log-done t)
+; (setq org-log-done t)
 
 (add-hook 'org-mode-hook
           (lambda () (setq truncate-lines nil)))
