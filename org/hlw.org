@@ -1,18 +1,20 @@
 #+SETUPFILE: theme-bigblow.setup
 
-* 编辑器资源
+* 通用资料
 
-** 通用
+[[http://www.cocos.com/docs/creator/index.html][用户文档]]
 
- [[http://www.cocos.com/docs/creator/index.html][用户文档]]
+[[http://forum.cocos.com/][论坛]]
 
- [[http://forum.cocos.com/][论坛]]
 
-** 程序相关 
+* 项目预览
+web预览链接：[[http://10.1.2.61:7456]]
 
- [[http://www.cocos.com/docs/creator/api/index.html][API]]
+PC和手机都可以访问
 
- [[http://www.supersuraccoon-cocos2d.com/cocos_creator/cocos_creator.html][Cocos Creator 之旅]]
+
+* 工具
+[[http://10.1.2.60:8000/config][配置转表]]
 
 
 * 项目管理
@@ -49,11 +51,15 @@
 *** TODO 战斗检验
 *** TODO 集成测试
 *** TODO 压力测试
+*** TODO 战斗过程服务器检查
 ** 客户端
-*** TODO 通用
+*** TODO 枚举使用cc.Enum
+*** TODO 路径配置怪物部分从编辑器移出到新表，并加入血量和速度
+*** TODO 地图初始动画播放
+*** DONE 技能多子弹(单数)
+*** DONE 最多穿透数量,和最大距离
+*** Aaron 技能子弹,上子弹
 
-*** TODO 战斗
-地图初始动画播放
 ** 网站
 *** TODO 文档
 **** TODO 战斗地图配置 [0%]
@@ -68,7 +74,7 @@
 - [ ] buff表
 **** TODO 碰撞以及碰撞组
 *** TODO 工具
-*** DONE 人员联系表
+*** TODO 人员联系表
 CLOSED: [2016-10-29 Sat 17:56]
 
 
@@ -80,17 +86,25 @@ CLOSED: [2016-10-29 Sat 17:56]
 
 运行下载的安装文件安装编辑器
 
-** 注册bitbucket帐号(如果已经有bitbucket帐号,此步可以忽略)
+** 注册bitbucket帐号
 
 [[https://bitbucket.org][bitbucket]]
 
 点击上面的链接注册bitbucket帐号,将帐号发给aaron加入项目组
 
+目前发现国内IP注册无法安装机器人识别控件,请设置代理之后再注册,代理:10.1.2.22:8123
+
 ** git客户端
 
-[[https://git-scm.com/download/win][点击下载]]
+[[https://git-scm.com/download/win][点击下载GIT]]
 
-运行下载的安装文件安装git
+[[https://download.tortoisegit.org/tgit/2.3.0.0/TortoiseGit-2.3.0.0-64bit.msi][点击下载乌龟GIT客户端]]
+
+[[https://download.tortoisegit.org/tgit/2.3.0.0/TortoiseGit-LanguagePack-2.3.0.0-64bit-zh_CN.msi][点击下载乌龟GIT客户端中文语言包]]
+
+安装下载的客户端和语言包
+
+在任意空白处单击鼠标右键 -> TortoiseGit -> Settings -> Language 改成中文
 
 在"开始"->"搜索程序和文件"中输入git config --global user.name "你的bitbucket帐号",回车
 
@@ -98,15 +112,13 @@ CLOSED: [2016-10-29 Sat 17:56]
 
 ** 使用git下载项目工程
 
- 打开git gui
+进入希望放置项目文件的目录
 
- 选择Clone Existing Repository
+登录下面网页中复制项目git地址(右上方,选HTTPS):[[https://bitbucket.org/noragame/game_client_cc][项目]]
+ 
+在任意空白处单击鼠标右键 -> Git 克隆
 
- Source Location填入项目地址(username为你的bitbucket帐号):https://username@bitbucket.org/noragame/game_client_cc.git
-
- Target Directory填入项目下载到的目录(如:d:\client)
-
- 点击Clone确认下载
+URL填入项目地址 -> 确定
 
 ** 使用编辑器打开项目
 
@@ -116,9 +128,54 @@ CLOSED: [2016-10-29 Sat 17:56]
   
 
 
+* 程序组学习资料
+
+** 基础
+
+[[http://item.jd.com/10360906.html][深入理解计算机系统]]
+
+[[http://item.jd.com/10078483.html][敏捷软件开发]](重点第七章到第十二章)
+
+
+** 语言
+
+*** JS
+
+[[http://item.jd.com/11090963.html][JavaScript语言精粹]]
+
+[[http://javascript.ruanyifeng.com/][JavaScript标准参考教程]]
+
+[[http://es6.ruanyifeng.com/][ECMAScript6入门]]
+
+*** C++
+
+[[http://item.jd.com/10067200.html][程序员的自我修养]]
+
+[[http://en.cppreference.com/w/][C++Reference]]
+
+
+** 编辑器
+
+[[http://www.cocos.com/docs/creator/index.html][用户文档]]
+
+[[http://forum.cocos.com/][论坛]]
+
+[[http://www.cocos.com/docs/creator/api/index.html][API]]
+
+[[http://www.supersuraccoon-cocos2d.com/cocos_creator/cocos_creator.html][Cocos Creator 之旅]]
+
+** GIT
+
+[[http://www.runoob.com/git/git-tutorial.html][GIT中文教程]]
+
+
 * 开发组人员
-| 姓名   | RTX   |        qq |        手机 |
-|--------+-------+-----------+-------------|
-| 林佳   | Amber |   6375617 | 18601339040 |
-| 安洋   | Aaron |  75335137 | 18601369184 |
-| 何旭杰 | Linc  | 279989589 |             |
+| 姓名   | RTX   | 组   |        qq |        手机 |
+|--------+-------+------+-----------+-------------|
+| 林佳   | Amber | 策划 |   6375617 | 18601339040 |
+| 安洋   | Aaron | 程序 |  75335137 | 18601369184 |
+| 何旭杰 | Linc  | 美术 | 279989589 | 13818545441 |
+| 孙博超 | Ben   | 策划 |  52851553 | 13482697104 |
+| 段磊   | DL    | 程序 | 513576674 | 15395102496 |
+
+
