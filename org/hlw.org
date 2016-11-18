@@ -9,7 +9,11 @@
 
 
 * 项目预览
-web预览链接：[[http://10.1.2.61:7456]]
+[[http://10.1.2.61:7456][Aaron的工程]]
+
+[[http://10.1.2.46:7456%0A][Amber的工程]]
+
+[[http://10.1.2.27:7456][Linc的工程]]
 
 PC和手机都可以访问
 
@@ -70,26 +74,40 @@ PC和手机都可以访问
 列:max_bullet 最大子弹个数
 
 列:refill_time 填充一个子弹的时间
-*** TODO 技能机制,目标选择[54%]
+*** TODO 技能机制,目标选择[81%]
 **** DONE 范围内最远的敌人
-target_type: FAREST_ENEMY
+target_select: FAREST
 **** DONE 范围内血量(百分比)最多的敌人
-target_type: MOST_HP_ENEMY MOST_HP_PERCENT_ENEMY
+target_select: MOST_HP MOST_HP_PERCENT
 **** DONE 范围内血量(百分比)最少的敌人
-target_type: LEAST_HP_ENEMY LEAST_HP_PERCENT_ENEMY
+target_select: LEAST_HP LEAST_HP_PERCENT
 **** DONE 范围内移动速度(当前值)最快的敌人
-target_type: FASTEST_ENEMY
+target_select: FASTEST
 **** DONE 范围内移动速度(当前值)最慢的敌人
-target_type: SLOWEST_ENEMY
+target_select: SLOWEST
 **** Aaron 范围内目标体型最大的敌人
 **** Aaron 范围内目标体型最小的敌人
-**** Aaron 范围内移动路程最短的敌人
-**** Aaron 范围内移动路程最远的敌人
+**** DONE 范围内距离终点路程最短的敌人
+skill_select: CLOSE_TO_END
+**** DONE 范围内距离起点路程最短的敌人
+skill_select: CLOSE_TO_BEGIN
 **** DONE 范围内特定标签的敌人
-target_type: ENEMY_HAS_TAG
+target_select: TAG
 
-target_type_arg(新加列): tag
-**** Aaron 范围内特定标签的友军
+target_select_arg(新加列): tag
+**** DONE 范围内特定标签的友军
+target_select: TAG
+
+target_select_arg(新加列): tag
+*** TODO 子弹移动方式 [50%]
+**** TODO 曲线,圆形,螺旋形
+**** DONE 沿道路向出怪点移动
+move_type: PATH_TO_BEGIN
+**** DONE 沿道路向目标点移动
+move_type: PATH_TO_END
+**** TODO 沿着道路朝目标点方向移动(不追踪)
+*** DONE 技能机制,目标追踪
+stick_target: TRUE代表追踪
 *** DL 塔座放置时自动调整位置到最近的格子上
 背景尺寸 1334 x 768
 
@@ -98,6 +116,9 @@ target_type_arg(新加列): tag
 格子大小 80 x 80
 
 所有格子组成的区域是 1040 x 560
+*** TODO 场景中的鱼动画随机,播完之后 暂定大概10秒加一个随机值
+*** TODO 场景中荷叶动画延时
+*** TODO 场景中龟壳播动画每秒几率播放
 
 ** 网站
 *** TODO 文档
@@ -153,11 +174,13 @@ CLOSED: [2016-10-29 Sat 17:56]
 
 进入希望放置项目文件的目录
 
-登录下面网页中复制项目git地址(右上方,选HTTPS):[[https://bitbucket.org/noragame/game_client_cc][项目]]
+登录项目网页复制项目git地址(右上方,选HTTPS):[[https://bitbucket.org/noragame/game_client_cc][项目]]
  
 在任意空白处单击鼠标右键 -> Git 克隆
 
 URL填入项目地址 -> 确定
+
+输入bitbucket邮箱,密码 -> 确定
 
 ** 使用编辑器打开项目
 

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>hlw</title>
-<!-- 2016-11-16 Wed 18:26 -->
+<!-- 2016-11-18 Fri 18:15 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
@@ -221,8 +221,13 @@ for the JavaScript code in this tag.
 <li><a href="#sec-4-2-5">4.2.5. <span class="done DONE">DONE</span> 最多穿透数量,和最大距离</a></li>
 <li><a href="#sec-4-2-6">4.2.6. <span class="done DONE">DONE</span> 技能逻辑修改:不再有选择技能逻辑,所有技能都可以被释放.当多个技能都可用时,一个一个释放.</a></li>
 <li><a href="#sec-4-2-7">4.2.7. <span class="done DONE">DONE</span> 技能子弹,上子弹</a></li>
-<li><a href="#sec-4-2-8">4.2.8. <span class="todo TODO">TODO</span> 技能机制,目标选择<code>[54%]</code></a></li>
-<li><a href="#sec-4-2-9">4.2.9. <span class="todo DL">DL</span> 塔座放置时自动调整位置到最近的格子上</a></li>
+<li><a href="#sec-4-2-8">4.2.8. <span class="todo TODO">TODO</span> 技能机制,目标选择<code>[81%]</code></a></li>
+<li><a href="#sec-4-2-9">4.2.9. <span class="todo TODO">TODO</span> 子弹移动方式 <code>[50%]</code></a></li>
+<li><a href="#sec-4-2-10">4.2.10. <span class="done DONE">DONE</span> 技能机制,目标追踪</a></li>
+<li><a href="#sec-4-2-11">4.2.11. <span class="todo DL">DL</span> 塔座放置时自动调整位置到最近的格子上</a></li>
+<li><a href="#sec-4-2-12">4.2.12. <span class="todo TODO">TODO</span> 场景中的鱼动画随机,播完之后 暂定大概10秒加一个随机值</a></li>
+<li><a href="#sec-4-2-13">4.2.13. <span class="todo TODO">TODO</span> 场景中荷叶动画延时</a></li>
+<li><a href="#sec-4-2-14">4.2.14. <span class="todo TODO">TODO</span> 场景中龟壳播动画每秒几率播放</a></li>
 </ul>
 </li>
 <li><a href="#sec-4-3">4.3. 网站</a>
@@ -279,7 +284,15 @@ for the JavaScript code in this tag.
 <h2 id="sec-2"><span class="section-number-2">2</span> 项目预览</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-web预览链接：<a href="http://10.1.2.61:7456">http://10.1.2.61:7456</a>
+<a href="http://10.1.2.61:7456">Aaron的工程</a>
+</p>
+
+<p>
+<a href="http://10.1.2.46:7456%0A">Amber的工程</a>
+</p>
+
+<p>
+<a href="http://10.1.2.27:7456">Linc的工程</a>
 </p>
 
 <p>
@@ -436,57 +449,102 @@ PC和手机都可以访问
 </div>
 </div>
 <div id="outline-container-sec-4-2-8" class="outline-4">
-<h4 id="sec-4-2-8"><span class="section-number-4">4.2.8</span> <span class="todo TODO">TODO</span> 技能机制,目标选择<code>[54%]</code></h4>
+<h4 id="sec-4-2-8"><span class="section-number-4">4.2.8</span> <span class="todo TODO">TODO</span> 技能机制,目标选择<code>[81%]</code></h4>
 <div class="outline-text-4" id="text-4-2-8">
 </div><ol class="org-ol"><li><a id="sec-4-2-8-1" name="sec-4-2-8-1"></a><span class="done DONE">DONE</span> 范围内最远的敌人<br  /><div class="outline-text-5" id="text-4-2-8-1">
 <p>
-target_type: FAREST_ENEMY
+target_select: FAREST
 </p>
 </div>
 </li>
 <li><a id="sec-4-2-8-2" name="sec-4-2-8-2"></a><span class="done DONE">DONE</span> 范围内血量(百分比)最多的敌人<br  /><div class="outline-text-5" id="text-4-2-8-2">
 <p>
-target_type: MOST_HP_ENEMY MOST_HP_PERCENT_ENEMY
+target_select: MOST_HP MOST_HP_PERCENT
 </p>
 </div>
 </li>
 <li><a id="sec-4-2-8-3" name="sec-4-2-8-3"></a><span class="done DONE">DONE</span> 范围内血量(百分比)最少的敌人<br  /><div class="outline-text-5" id="text-4-2-8-3">
 <p>
-target_type: LEAST_HP_ENEMY LEAST_HP_PERCENT_ENEMY
+target_select: LEAST_HP LEAST_HP_PERCENT
 </p>
 </div>
 </li>
 <li><a id="sec-4-2-8-4" name="sec-4-2-8-4"></a><span class="done DONE">DONE</span> 范围内移动速度(当前值)最快的敌人<br  /><div class="outline-text-5" id="text-4-2-8-4">
 <p>
-target_type: FASTEST_ENEMY
+target_select: FASTEST
 </p>
 </div>
 </li>
 <li><a id="sec-4-2-8-5" name="sec-4-2-8-5"></a><span class="done DONE">DONE</span> 范围内移动速度(当前值)最慢的敌人<br  /><div class="outline-text-5" id="text-4-2-8-5">
 <p>
-target_type: SLOWEST_ENEMY
+target_select: SLOWEST
 </p>
 </div>
 </li>
 <li><a id="sec-4-2-8-6" name="sec-4-2-8-6"></a><span class="todo Aaron">Aaron</span> 范围内目标体型最大的敌人<br  /></li>
 <li><a id="sec-4-2-8-7" name="sec-4-2-8-7"></a><span class="todo Aaron">Aaron</span> 范围内目标体型最小的敌人<br  /></li>
-<li><a id="sec-4-2-8-8" name="sec-4-2-8-8"></a><span class="todo Aaron">Aaron</span> 范围内移动路程最短的敌人<br  /></li>
-<li><a id="sec-4-2-8-9" name="sec-4-2-8-9"></a><span class="todo Aaron">Aaron</span> 范围内移动路程最远的敌人<br  /></li>
-<li><a id="sec-4-2-8-10" name="sec-4-2-8-10"></a><span class="done DONE">DONE</span> 范围内特定标签的敌人<br  /><div class="outline-text-5" id="text-4-2-8-10">
+<li><a id="sec-4-2-8-8" name="sec-4-2-8-8"></a><span class="done DONE">DONE</span> 范围内距离终点路程最短的敌人<br  /><div class="outline-text-5" id="text-4-2-8-8">
 <p>
-target_type: ENEMY_HAS_TAG
-</p>
-
-<p>
-target_type_arg(新加列): tag
+skill_select: CLOSE_TO_END
 </p>
 </div>
 </li>
-<li><a id="sec-4-2-8-11" name="sec-4-2-8-11"></a><span class="todo Aaron">Aaron</span> 范围内特定标签的友军<br  /></li></ol>
+<li><a id="sec-4-2-8-9" name="sec-4-2-8-9"></a><span class="done DONE">DONE</span> 范围内距离起点路程最短的敌人<br  /><div class="outline-text-5" id="text-4-2-8-9">
+<p>
+skill_select: CLOSE_TO_BEGIN
+</p>
+</div>
+</li>
+<li><a id="sec-4-2-8-10" name="sec-4-2-8-10"></a><span class="done DONE">DONE</span> 范围内特定标签的敌人<br  /><div class="outline-text-5" id="text-4-2-8-10">
+<p>
+target_select: TAG
+</p>
+
+<p>
+target_select_arg(新加列): tag
+</p>
+</div>
+</li>
+<li><a id="sec-4-2-8-11" name="sec-4-2-8-11"></a><span class="done DONE">DONE</span> 范围内特定标签的友军<br  /><div class="outline-text-5" id="text-4-2-8-11">
+<p>
+target_select: TAG
+</p>
+
+<p>
+target_select_arg(新加列): tag
+</p>
+</div>
+</li></ol>
 </div>
 <div id="outline-container-sec-4-2-9" class="outline-4">
-<h4 id="sec-4-2-9"><span class="section-number-4">4.2.9</span> <span class="todo DL">DL</span> 塔座放置时自动调整位置到最近的格子上</h4>
+<h4 id="sec-4-2-9"><span class="section-number-4">4.2.9</span> <span class="todo TODO">TODO</span> 子弹移动方式 <code>[50%]</code></h4>
 <div class="outline-text-4" id="text-4-2-9">
+</div><ol class="org-ol"><li><a id="sec-4-2-9-1" name="sec-4-2-9-1"></a><span class="todo TODO">TODO</span> 曲线,圆形,螺旋形<br  /></li>
+<li><a id="sec-4-2-9-2" name="sec-4-2-9-2"></a><span class="done DONE">DONE</span> 沿道路向出怪点移动<br  /><div class="outline-text-5" id="text-4-2-9-2">
+<p>
+move_type: PATH_TO_BEGIN
+</p>
+</div>
+</li>
+<li><a id="sec-4-2-9-3" name="sec-4-2-9-3"></a><span class="done DONE">DONE</span> 沿道路向目标点移动<br  /><div class="outline-text-5" id="text-4-2-9-3">
+<p>
+move_type: PATH_TO_END
+</p>
+</div>
+</li>
+<li><a id="sec-4-2-9-4" name="sec-4-2-9-4"></a><span class="todo TODO">TODO</span> 沿着道路朝目标点方向移动(不追踪)<br  /></li></ol>
+</div>
+<div id="outline-container-sec-4-2-10" class="outline-4">
+<h4 id="sec-4-2-10"><span class="section-number-4">4.2.10</span> <span class="done DONE">DONE</span> 技能机制,目标追踪</h4>
+<div class="outline-text-4" id="text-4-2-10">
+<p>
+stick_target: TRUE代表追踪
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-2-11" class="outline-4">
+<h4 id="sec-4-2-11"><span class="section-number-4">4.2.11</span> <span class="todo DL">DL</span> 塔座放置时自动调整位置到最近的格子上</h4>
+<div class="outline-text-4" id="text-4-2-11">
 <p>
 背景尺寸 1334 x 768
 </p>
@@ -503,6 +561,15 @@ target_type_arg(新加列): tag
 所有格子组成的区域是 1040 x 560
 </p>
 </div>
+</div>
+<div id="outline-container-sec-4-2-12" class="outline-4">
+<h4 id="sec-4-2-12"><span class="section-number-4">4.2.12</span> <span class="todo TODO">TODO</span> 场景中的鱼动画随机,播完之后 暂定大概10秒加一个随机值</h4>
+</div>
+<div id="outline-container-sec-4-2-13" class="outline-4">
+<h4 id="sec-4-2-13"><span class="section-number-4">4.2.13</span> <span class="todo TODO">TODO</span> 场景中荷叶动画延时</h4>
+</div>
+<div id="outline-container-sec-4-2-14" class="outline-4">
+<h4 id="sec-4-2-14"><span class="section-number-4">4.2.14</span> <span class="todo TODO">TODO</span> 场景中龟壳播动画每秒几率播放</h4>
 </div>
 </div>
 
@@ -628,7 +695,7 @@ target_type_arg(新加列): tag
 </p>
 
 <p>
-登录下面网页中复制项目git地址(右上方,选HTTPS):<a href="https://bitbucket.org/noragame/game_client_cc">项目</a>
+登录项目网页复制项目git地址(右上方,选HTTPS):<a href="https://bitbucket.org/noragame/game_client_cc">项目</a>
 </p>
 
 <p>
@@ -637,6 +704,10 @@ target_type_arg(新加列): tag
 
 <p>
 URL填入项目地址 -&gt; 确定
+</p>
+
+<p>
+输入bitbucket邮箱,密码 -&gt; 确定
 </p>
 </div>
 </div>
@@ -813,7 +884,7 @@ URL填入项目地址 -&gt; 确定
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2016-11-16 Wed 18:26</p>
+<p class="date">Created: 2016-11-18 Fri 18:15</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
