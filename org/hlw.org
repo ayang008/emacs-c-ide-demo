@@ -19,11 +19,14 @@ PC和手机都可以访问
 
 
 * 工具
-[[http://10.1.2.60:8000/config][配置转表]]
+[[http://10.1.2.27:8000/config][配置转表]]
 
 
 * 项目管理
 ** 服务器
+*** TODO 服务器进程IP和端口规划
+**** TODO 所有测试改用测试专用IP和端口
+**** TODO 加入新的配置脚本,输入IP和端口,自动更新所有启动和停止脚本
 *** TODO 玩家角色使用gid作为主键,目前使用的是名字 [0%]
 - [ ] 角色类中加入gid以及获取接口,创建角色时给予新的gid
 - [ ] 数据库角色表加入gid
@@ -61,19 +64,6 @@ PC和手机都可以访问
 *** TODO 枚举使用cc.Enum
 *** TODO 路径配置怪物部分从编辑器移出到新表，并加入血量和速度
 *** TODO 地图初始动画播放
-*** DONE 技能多子弹(单数)
-列:count 子弹数
-
-列:radians 子弹偏离弧度
-*** DONE 最多穿透数量,和最大距离
-列:max_hit 最多击中数量
-
-列:max_distance 最大距离
-*** DONE 技能逻辑修改:不再有选择技能逻辑,所有技能都可以被释放.当多个技能都可用时,一个一个释放.
-*** DONE 技能子弹,上子弹
-列:max_bullet 最大子弹个数
-
-列:refill_time 填充一个子弹的时间
 *** TODO 技能机制,目标选择[81%]
 **** DONE 范围内最远的敌人
 target_select: FAREST
@@ -88,9 +78,9 @@ target_select: SLOWEST
 **** Aaron 范围内目标体型最大的敌人
 **** Aaron 范围内目标体型最小的敌人
 **** DONE 范围内距离终点路程最短的敌人
-skill_select: CLOSE_TO_END
+target_select: CLOSE_TO_END
 **** DONE 范围内距离起点路程最短的敌人
-skill_select: CLOSE_TO_BEGIN
+target_select: CLOSE_TO_BEGIN
 **** DONE 范围内特定标签的敌人
 target_select: TAG
 
@@ -99,43 +89,62 @@ target_select_arg(新加列): tag
 target_select: TAG
 
 target_select_arg(新加列): tag
-*** TODO 子弹移动方式 [50%]
-**** TODO 曲线,圆形,螺旋形
+*** TODO 子弹移动方式 [75%]
+**** DONE 曲线,圆形,螺旋形
+编辑器中编辑轨迹动画并添加reach点, 将生成的动画clip设置为子弹的默认动画clip,技能表中MOVE_TYPE: ANIMATION 或者 ANIMATION_LOOP(循环)
+
 **** DONE 沿道路向出怪点移动
 move_type: PATH_TO_BEGIN
 **** DONE 沿道路向目标点移动
 move_type: PATH_TO_END
 **** TODO 沿着道路朝目标点方向移动(不追踪)
-*** DONE 技能机制,目标追踪
-stick_target: TRUE代表追踪
-*** DL 塔座放置时自动调整位置到最近的格子上
-背景尺寸 1334 x 768
+*** TODO 改变怪物 [50%]
+**** DONE 体型缩放
+buff效果 SCALE_TO 参数1:时间 参数2:缩放倍数
+**** TODO 高度改变(击飞)
+buff效果 NO_MOVE 参数1:时间
 
-按左上角为 (0, 0) 点算,第一个格子的左上角位于 (147, 80)
+**** TODO 行动方式
+**** DONE 沿着道路位移
+buff效果 PUSH_FORWARD 参数1:时间 参数2:距离
 
-格子大小 80 x 80
+buff效果 PUSH_BACKWARD 参数1:时间 参数2:距离
 
-所有格子组成的区域是 1040 x 560
-*** TODO 场景中的鱼动画随机,播完之后 暂定大概10秒加一个随机值
-*** TODO 场景中荷叶动画延时
-*** TODO 场景中龟壳播动画每秒几率播放
+buff效果 THROW_FORWARD 参数1:时间 参数2:距离
 
-** 网站
-*** TODO 文档
-**** TODO 战斗地图配置 [0%]
-- [ ] 基础配置
-- [ ] 配置塔
-- [ ] 配置怪物
-  - [ ] 配置路线
-  - [ ] 配置怪物
-**** TODO 配置表说明 [0%]
-- [ ] actor表
-- [ ] skill表
-- [ ] buff表
-**** TODO 碰撞以及碰撞组
-*** TODO 工具
-*** TODO 人员联系表
-CLOSED: [2016-10-29 Sat 17:56]
+buff效果 THROW_BACKWARD 参数1:时间 参数2:距离
+*** TODO 技能释放条件 [55%]
+**** DONE 特定体型目标
+技能目标选择 ACTOR_TAG
+
+**** DONE 对地/对空
+技能目标选择 ACTOR_TAG
+
+**** TODO 概率性
+**** TODO 自身属性达到条件
+**** TODO 目标属性达到条件
+**** DONE 自身某状态达到条件(层数)
+技能表caster_condition.type HAS_BUFF 参数1 buff id 参数2 最少层数
+**** DONE 目标某状态达到条件(层数)
+技能表caster_condition.type HAS_BUFF 参数1 buff id 参数2 最少层数
+**** TODO 手动释放
+**** DONE 技能释放次数(BUFF层数)达到XX
+技能表caster_condition.type HAS_BUFF 参数1 buff id 参数2 最少层数
+*** TODO 技能类型 [66%]
+**** DONE 召唤生物
+BUFF效果: SUMMON_TOWER 参数1: actor id 参数2: 等级
+
+**** DONE 光环
+技能尺寸为光环的尺寸,进入(碰撞)加buff,离开删buff
+
+**** TODO 道路生物
+
+*** DONE 满足开战条件时:开始战斗按钮判断是否可以开战,暂定开战条件为场上至少有1个葫芦娃,如果不能开战,出现提示,提示方面做一个带localizedlabel的prefab,里面显示提示内容
+
+*** DONE 怪物及障碍物受到伤害后显示血条,若X秒内没有受到伤害则消失(暂定为3秒)
+*** DL 点击暂停按钮:按钮变化为播放按钮,界面战斗暂停,点击播放按钮继续战斗
+*** DONE 点击快进:按钮显示2X,战斗X倍速(暂定为2倍).再次点击变为正常速度
+*** DL 制作怪物掉落甘露的UI效果,请参照保卫萝卜3中的怪物死亡时候相同的表现还有我们UI的示意图
 
 
 * 开发环境搭建
@@ -188,6 +197,9 @@ URL填入项目地址 -> 确定
 
  选择打开其他项目,选择项目路径(如:d:\client)并点击选择文件夹
   
+** 推荐安装并使用bitbucket提供的客户端
+
+[[https://downloads.atlassian.com/software/sourcetree/windows/SourceTreeSetup_1.9.6.2.exe?_ga=1.156178623.521041457.1480648963][SourceTree]]
 
 
 * 程序组学习资料
@@ -226,9 +238,30 @@ URL填入项目地址 -> 确定
 
 [[http://www.supersuraccoon-cocos2d.com/cocos_creator/cocos_creator.html][Cocos Creator 之旅]]
 
+
 ** GIT
 
 [[http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/][GIT中文教程]]
+
+
+** 编辑器
+
+*** 删除对象
+
+不再使用的对象如果只是设置 parent = null 是不足以删除它的,需要调用 destroy.
+
+*** removeFromParent与destroy的区别
+
+destroy 后，节点不可用。
+
+removeFromParent 后，节点可重新 add 回场景中。
+
+当节点要销毁时，请 destroy。
+
+当节点要**暂时**从场景中移除，请 removeFromParent。
+
+
+
 
 
 * 开发组人员

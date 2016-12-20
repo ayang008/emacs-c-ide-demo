@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>hlw</title>
-<!-- 2016-11-18 Fri 18:15 -->
+<!-- 2016-12-20 Tue 14:01 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
@@ -201,15 +201,16 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#sec-4-1">4.1. 服务器</a>
 <ul>
-<li><a href="#sec-4-1-1">4.1.1. <span class="todo TODO">TODO</span> 玩家角色使用gid作为主键,目前使用的是名字 <code>[0%]</code></a></li>
-<li><a href="#sec-4-1-2">4.1.2. <span class="todo TODO">TODO</span> 脏字过滤</a></li>
-<li><a href="#sec-4-1-3">4.1.3. <span class="todo TODO">TODO</span> 聊天 <code>[0%]</code></a></li>
-<li><a href="#sec-4-1-4">4.1.4. <span class="todo TODO">TODO</span> 好友</a></li>
-<li><a href="#sec-4-1-5">4.1.5. <span class="todo TODO">TODO</span> 工会</a></li>
-<li><a href="#sec-4-1-6">4.1.6. <span class="todo TODO">TODO</span> 战斗检验</a></li>
-<li><a href="#sec-4-1-7">4.1.7. <span class="todo TODO">TODO</span> 集成测试</a></li>
-<li><a href="#sec-4-1-8">4.1.8. <span class="todo TODO">TODO</span> 压力测试</a></li>
-<li><a href="#sec-4-1-9">4.1.9. <span class="todo TODO">TODO</span> 战斗过程服务器检查</a></li>
+<li><a href="#sec-4-1-1">4.1.1. <span class="todo TODO">TODO</span> 服务器进程IP和端口规划</a></li>
+<li><a href="#sec-4-1-2">4.1.2. <span class="todo TODO">TODO</span> 玩家角色使用gid作为主键,目前使用的是名字 <code>[0%]</code></a></li>
+<li><a href="#sec-4-1-3">4.1.3. <span class="todo TODO">TODO</span> 脏字过滤</a></li>
+<li><a href="#sec-4-1-4">4.1.4. <span class="todo TODO">TODO</span> 聊天 <code>[0%]</code></a></li>
+<li><a href="#sec-4-1-5">4.1.5. <span class="todo TODO">TODO</span> 好友</a></li>
+<li><a href="#sec-4-1-6">4.1.6. <span class="todo TODO">TODO</span> 工会</a></li>
+<li><a href="#sec-4-1-7">4.1.7. <span class="todo TODO">TODO</span> 战斗检验</a></li>
+<li><a href="#sec-4-1-8">4.1.8. <span class="todo TODO">TODO</span> 集成测试</a></li>
+<li><a href="#sec-4-1-9">4.1.9. <span class="todo TODO">TODO</span> 压力测试</a></li>
+<li><a href="#sec-4-1-10">4.1.10. <span class="todo TODO">TODO</span> 战斗过程服务器检查</a></li>
 </ul>
 </li>
 <li><a href="#sec-4-2">4.2. 客户端</a>
@@ -217,24 +218,16 @@ for the JavaScript code in this tag.
 <li><a href="#sec-4-2-1">4.2.1. <span class="todo TODO">TODO</span> 枚举使用cc.Enum</a></li>
 <li><a href="#sec-4-2-2">4.2.2. <span class="todo TODO">TODO</span> 路径配置怪物部分从编辑器移出到新表，并加入血量和速度</a></li>
 <li><a href="#sec-4-2-3">4.2.3. <span class="todo TODO">TODO</span> 地图初始动画播放</a></li>
-<li><a href="#sec-4-2-4">4.2.4. <span class="done DONE">DONE</span> 技能多子弹(单数)</a></li>
-<li><a href="#sec-4-2-5">4.2.5. <span class="done DONE">DONE</span> 最多穿透数量,和最大距离</a></li>
-<li><a href="#sec-4-2-6">4.2.6. <span class="done DONE">DONE</span> 技能逻辑修改:不再有选择技能逻辑,所有技能都可以被释放.当多个技能都可用时,一个一个释放.</a></li>
-<li><a href="#sec-4-2-7">4.2.7. <span class="done DONE">DONE</span> 技能子弹,上子弹</a></li>
-<li><a href="#sec-4-2-8">4.2.8. <span class="todo TODO">TODO</span> 技能机制,目标选择<code>[81%]</code></a></li>
-<li><a href="#sec-4-2-9">4.2.9. <span class="todo TODO">TODO</span> 子弹移动方式 <code>[50%]</code></a></li>
-<li><a href="#sec-4-2-10">4.2.10. <span class="done DONE">DONE</span> 技能机制,目标追踪</a></li>
-<li><a href="#sec-4-2-11">4.2.11. <span class="todo DL">DL</span> 塔座放置时自动调整位置到最近的格子上</a></li>
-<li><a href="#sec-4-2-12">4.2.12. <span class="todo TODO">TODO</span> 场景中的鱼动画随机,播完之后 暂定大概10秒加一个随机值</a></li>
-<li><a href="#sec-4-2-13">4.2.13. <span class="todo TODO">TODO</span> 场景中荷叶动画延时</a></li>
-<li><a href="#sec-4-2-14">4.2.14. <span class="todo TODO">TODO</span> 场景中龟壳播动画每秒几率播放</a></li>
-</ul>
-</li>
-<li><a href="#sec-4-3">4.3. 网站</a>
-<ul>
-<li><a href="#sec-4-3-1">4.3.1. <span class="todo TODO">TODO</span> 文档</a></li>
-<li><a href="#sec-4-3-2">4.3.2. <span class="todo TODO">TODO</span> 工具</a></li>
-<li><a href="#sec-4-3-3">4.3.3. <span class="todo TODO">TODO</span> 人员联系表</a></li>
+<li><a href="#sec-4-2-4">4.2.4. <span class="todo TODO">TODO</span> 技能机制,目标选择<code>[81%]</code></a></li>
+<li><a href="#sec-4-2-5">4.2.5. <span class="todo TODO">TODO</span> 子弹移动方式 <code>[75%]</code></a></li>
+<li><a href="#sec-4-2-6">4.2.6. <span class="todo TODO">TODO</span> 改变怪物 <code>[50%]</code></a></li>
+<li><a href="#sec-4-2-7">4.2.7. <span class="todo TODO">TODO</span> 技能释放条件 <code>[55%]</code></a></li>
+<li><a href="#sec-4-2-8">4.2.8. <span class="todo TODO">TODO</span> 技能类型 <code>[66%]</code></a></li>
+<li><a href="#sec-4-2-9">4.2.9. <span class="done DONE">DONE</span> 满足开战条件时:开始战斗按钮判断是否可以开战,暂定开战条件为场上至少有1个葫芦娃,如果不能开战,出现提示,提示方面做一个带localizedlabel的prefab,里面显示提示内容</a></li>
+<li><a href="#sec-4-2-10">4.2.10. <span class="done DONE">DONE</span> 怪物及障碍物受到伤害后显示血条,若X秒内没有受到伤害则消失(暂定为3秒)</a></li>
+<li><a href="#sec-4-2-11">4.2.11. <span class="todo DL">DL</span> 点击暂停按钮:按钮变化为播放按钮,界面战斗暂停,点击播放按钮继续战斗</a></li>
+<li><a href="#sec-4-2-12">4.2.12. <span class="done DONE">DONE</span> 点击快进:按钮显示2X,战斗X倍速(暂定为2倍).再次点击变为正常速度</a></li>
+<li><a href="#sec-4-2-13">4.2.13. <span class="todo DL">DL</span> 制作怪物掉落甘露的UI效果,请参照保卫萝卜3中的怪物死亡时候相同的表现还有我们UI的示意图</a></li>
 </ul>
 </li>
 </ul>
@@ -246,6 +239,7 @@ for the JavaScript code in this tag.
 <li><a href="#sec-5-3">5.3. git客户端</a></li>
 <li><a href="#sec-5-4">5.4. 使用git下载项目工程</a></li>
 <li><a href="#sec-5-5">5.5. 使用编辑器打开项目</a></li>
+<li><a href="#sec-5-6">5.6. 推荐安装并使用bitbucket提供的客户端</a></li>
 </ul>
 </li>
 <li><a href="#sec-6">6. 程序组学习资料</a>
@@ -259,6 +253,12 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#sec-6-3">6.3. 编辑器</a></li>
 <li><a href="#sec-6-4">6.4. GIT</a></li>
+<li><a href="#sec-6-5">6.5. 编辑器</a>
+<ul>
+<li><a href="#sec-6-5-1">6.5.1. 删除对象</a></li>
+<li><a href="#sec-6-5-2">6.5.2. removeFromParent与destroy的区别</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#sec-7">7. 开发组人员</a></li>
@@ -306,7 +306,7 @@ PC和手机都可以访问
 <h2 id="sec-3"><span class="section-number-2">3</span> 工具</h2>
 <div class="outline-text-2" id="text-3">
 <p>
-<a href="http://10.1.2.60:8000/config">配置转表</a>
+<a href="http://10.1.2.27:8000/config">配置转表</a>
 </p>
 </div>
 </div>
@@ -319,8 +319,14 @@ PC和手机都可以访问
 <h3 id="sec-4-1"><span class="section-number-3">4.1</span> 服务器</h3>
 <div class="outline-text-3" id="text-4-1">
 </div><div id="outline-container-sec-4-1-1" class="outline-4">
-<h4 id="sec-4-1-1"><span class="section-number-4">4.1.1</span> <span class="todo TODO">TODO</span> 玩家角色使用gid作为主键,目前使用的是名字 <code>[0%]</code></h4>
+<h4 id="sec-4-1-1"><span class="section-number-4">4.1.1</span> <span class="todo TODO">TODO</span> 服务器进程IP和端口规划</h4>
 <div class="outline-text-4" id="text-4-1-1">
+</div><ol class="org-ol"><li><a id="sec-4-1-1-1" name="sec-4-1-1-1"></a><span class="todo TODO">TODO</span> 所有测试改用测试专用IP和端口<br  /></li>
+<li><a id="sec-4-1-1-2" name="sec-4-1-1-2"></a><span class="todo TODO">TODO</span> 加入新的配置脚本,输入IP和端口,自动更新所有启动和停止脚本<br  /></li></ol>
+</div>
+<div id="outline-container-sec-4-1-2" class="outline-4">
+<h4 id="sec-4-1-2"><span class="section-number-4">4.1.2</span> <span class="todo TODO">TODO</span> 玩家角色使用gid作为主键,目前使用的是名字 <code>[0%]</code></h4>
+<div class="outline-text-4" id="text-4-1-2">
 <ul class="org-ul">
 <li><code>[&#xa0;]</code> 角色类中加入gid以及获取接口,创建角色时给予新的gid
 </li>
@@ -331,18 +337,18 @@ PC和手机都可以访问
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-4-1-2" class="outline-4">
-<h4 id="sec-4-1-2"><span class="section-number-4">4.1.2</span> <span class="todo TODO">TODO</span> 脏字过滤</h4>
-<div class="outline-text-4" id="text-4-1-2">
+<div id="outline-container-sec-4-1-3" class="outline-4">
+<h4 id="sec-4-1-3"><span class="section-number-4">4.1.3</span> <span class="todo TODO">TODO</span> 脏字过滤</h4>
+<div class="outline-text-4" id="text-4-1-3">
 <p>
 加入脏字过滤功能类
 </p>
 </div>
 </div>
 
-<div id="outline-container-sec-4-1-3" class="outline-4">
-<h4 id="sec-4-1-3"><span class="section-number-4">4.1.3</span> <span class="todo TODO">TODO</span> 聊天 <code>[0%]</code></h4>
-<div class="outline-text-4" id="text-4-1-3">
+<div id="outline-container-sec-4-1-4" class="outline-4">
+<h4 id="sec-4-1-4"><span class="section-number-4">4.1.4</span> <span class="todo TODO">TODO</span> 聊天 <code>[0%]</code></h4>
+<div class="outline-text-4" id="text-4-1-4">
 <ul class="org-ul">
 <li><code>[&#xa0;]</code> 聊天服务器进程,并与scene连接
 </li>
@@ -378,23 +384,23 @@ PC和手机都可以访问
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-4-1-4" class="outline-4">
-<h4 id="sec-4-1-4"><span class="section-number-4">4.1.4</span> <span class="todo TODO">TODO</span> 好友</h4>
-</div>
 <div id="outline-container-sec-4-1-5" class="outline-4">
-<h4 id="sec-4-1-5"><span class="section-number-4">4.1.5</span> <span class="todo TODO">TODO</span> 工会</h4>
+<h4 id="sec-4-1-5"><span class="section-number-4">4.1.5</span> <span class="todo TODO">TODO</span> 好友</h4>
 </div>
 <div id="outline-container-sec-4-1-6" class="outline-4">
-<h4 id="sec-4-1-6"><span class="section-number-4">4.1.6</span> <span class="todo TODO">TODO</span> 战斗检验</h4>
+<h4 id="sec-4-1-6"><span class="section-number-4">4.1.6</span> <span class="todo TODO">TODO</span> 工会</h4>
 </div>
 <div id="outline-container-sec-4-1-7" class="outline-4">
-<h4 id="sec-4-1-7"><span class="section-number-4">4.1.7</span> <span class="todo TODO">TODO</span> 集成测试</h4>
+<h4 id="sec-4-1-7"><span class="section-number-4">4.1.7</span> <span class="todo TODO">TODO</span> 战斗检验</h4>
 </div>
 <div id="outline-container-sec-4-1-8" class="outline-4">
-<h4 id="sec-4-1-8"><span class="section-number-4">4.1.8</span> <span class="todo TODO">TODO</span> 压力测试</h4>
+<h4 id="sec-4-1-8"><span class="section-number-4">4.1.8</span> <span class="todo TODO">TODO</span> 集成测试</h4>
 </div>
 <div id="outline-container-sec-4-1-9" class="outline-4">
-<h4 id="sec-4-1-9"><span class="section-number-4">4.1.9</span> <span class="todo TODO">TODO</span> 战斗过程服务器检查</h4>
+<h4 id="sec-4-1-9"><span class="section-number-4">4.1.9</span> <span class="todo TODO">TODO</span> 压力测试</h4>
+</div>
+<div id="outline-container-sec-4-1-10" class="outline-4">
+<h4 id="sec-4-1-10"><span class="section-number-4">4.1.10</span> <span class="todo TODO">TODO</span> 战斗过程服务器检查</h4>
 </div>
 </div>
 <div id="outline-container-sec-4-2" class="outline-3">
@@ -410,92 +416,53 @@ PC和手机都可以访问
 <h4 id="sec-4-2-3"><span class="section-number-4">4.2.3</span> <span class="todo TODO">TODO</span> 地图初始动画播放</h4>
 </div>
 <div id="outline-container-sec-4-2-4" class="outline-4">
-<h4 id="sec-4-2-4"><span class="section-number-4">4.2.4</span> <span class="done DONE">DONE</span> 技能多子弹(单数)</h4>
+<h4 id="sec-4-2-4"><span class="section-number-4">4.2.4</span> <span class="todo TODO">TODO</span> 技能机制,目标选择<code>[81%]</code></h4>
 <div class="outline-text-4" id="text-4-2-4">
-<p>
-列:count 子弹数
-</p>
-
-<p>
-列:radians 子弹偏离弧度
-</p>
-</div>
-</div>
-<div id="outline-container-sec-4-2-5" class="outline-4">
-<h4 id="sec-4-2-5"><span class="section-number-4">4.2.5</span> <span class="done DONE">DONE</span> 最多穿透数量,和最大距离</h4>
-<div class="outline-text-4" id="text-4-2-5">
-<p>
-列:max_hit 最多击中数量
-</p>
-
-<p>
-列:max_distance 最大距离
-</p>
-</div>
-</div>
-<div id="outline-container-sec-4-2-6" class="outline-4">
-<h4 id="sec-4-2-6"><span class="section-number-4">4.2.6</span> <span class="done DONE">DONE</span> 技能逻辑修改:不再有选择技能逻辑,所有技能都可以被释放.当多个技能都可用时,一个一个释放.</h4>
-</div>
-<div id="outline-container-sec-4-2-7" class="outline-4">
-<h4 id="sec-4-2-7"><span class="section-number-4">4.2.7</span> <span class="done DONE">DONE</span> 技能子弹,上子弹</h4>
-<div class="outline-text-4" id="text-4-2-7">
-<p>
-列:max_bullet 最大子弹个数
-</p>
-
-<p>
-列:refill_time 填充一个子弹的时间
-</p>
-</div>
-</div>
-<div id="outline-container-sec-4-2-8" class="outline-4">
-<h4 id="sec-4-2-8"><span class="section-number-4">4.2.8</span> <span class="todo TODO">TODO</span> 技能机制,目标选择<code>[81%]</code></h4>
-<div class="outline-text-4" id="text-4-2-8">
-</div><ol class="org-ol"><li><a id="sec-4-2-8-1" name="sec-4-2-8-1"></a><span class="done DONE">DONE</span> 范围内最远的敌人<br  /><div class="outline-text-5" id="text-4-2-8-1">
+</div><ol class="org-ol"><li><a id="sec-4-2-4-1" name="sec-4-2-4-1"></a><span class="done DONE">DONE</span> 范围内最远的敌人<br  /><div class="outline-text-5" id="text-4-2-4-1">
 <p>
 target_select: FAREST
 </p>
 </div>
 </li>
-<li><a id="sec-4-2-8-2" name="sec-4-2-8-2"></a><span class="done DONE">DONE</span> 范围内血量(百分比)最多的敌人<br  /><div class="outline-text-5" id="text-4-2-8-2">
+<li><a id="sec-4-2-4-2" name="sec-4-2-4-2"></a><span class="done DONE">DONE</span> 范围内血量(百分比)最多的敌人<br  /><div class="outline-text-5" id="text-4-2-4-2">
 <p>
 target_select: MOST_HP MOST_HP_PERCENT
 </p>
 </div>
 </li>
-<li><a id="sec-4-2-8-3" name="sec-4-2-8-3"></a><span class="done DONE">DONE</span> 范围内血量(百分比)最少的敌人<br  /><div class="outline-text-5" id="text-4-2-8-3">
+<li><a id="sec-4-2-4-3" name="sec-4-2-4-3"></a><span class="done DONE">DONE</span> 范围内血量(百分比)最少的敌人<br  /><div class="outline-text-5" id="text-4-2-4-3">
 <p>
 target_select: LEAST_HP LEAST_HP_PERCENT
 </p>
 </div>
 </li>
-<li><a id="sec-4-2-8-4" name="sec-4-2-8-4"></a><span class="done DONE">DONE</span> 范围内移动速度(当前值)最快的敌人<br  /><div class="outline-text-5" id="text-4-2-8-4">
+<li><a id="sec-4-2-4-4" name="sec-4-2-4-4"></a><span class="done DONE">DONE</span> 范围内移动速度(当前值)最快的敌人<br  /><div class="outline-text-5" id="text-4-2-4-4">
 <p>
 target_select: FASTEST
 </p>
 </div>
 </li>
-<li><a id="sec-4-2-8-5" name="sec-4-2-8-5"></a><span class="done DONE">DONE</span> 范围内移动速度(当前值)最慢的敌人<br  /><div class="outline-text-5" id="text-4-2-8-5">
+<li><a id="sec-4-2-4-5" name="sec-4-2-4-5"></a><span class="done DONE">DONE</span> 范围内移动速度(当前值)最慢的敌人<br  /><div class="outline-text-5" id="text-4-2-4-5">
 <p>
 target_select: SLOWEST
 </p>
 </div>
 </li>
-<li><a id="sec-4-2-8-6" name="sec-4-2-8-6"></a><span class="todo Aaron">Aaron</span> 范围内目标体型最大的敌人<br  /></li>
-<li><a id="sec-4-2-8-7" name="sec-4-2-8-7"></a><span class="todo Aaron">Aaron</span> 范围内目标体型最小的敌人<br  /></li>
-<li><a id="sec-4-2-8-8" name="sec-4-2-8-8"></a><span class="done DONE">DONE</span> 范围内距离终点路程最短的敌人<br  /><div class="outline-text-5" id="text-4-2-8-8">
+<li><a id="sec-4-2-4-6" name="sec-4-2-4-6"></a><span class="todo Aaron">Aaron</span> 范围内目标体型最大的敌人<br  /></li>
+<li><a id="sec-4-2-4-7" name="sec-4-2-4-7"></a><span class="todo Aaron">Aaron</span> 范围内目标体型最小的敌人<br  /></li>
+<li><a id="sec-4-2-4-8" name="sec-4-2-4-8"></a><span class="done DONE">DONE</span> 范围内距离终点路程最短的敌人<br  /><div class="outline-text-5" id="text-4-2-4-8">
 <p>
-skill_select: CLOSE_TO_END
+target_select: CLOSE_TO_END
 </p>
 </div>
 </li>
-<li><a id="sec-4-2-8-9" name="sec-4-2-8-9"></a><span class="done DONE">DONE</span> 范围内距离起点路程最短的敌人<br  /><div class="outline-text-5" id="text-4-2-8-9">
+<li><a id="sec-4-2-4-9" name="sec-4-2-4-9"></a><span class="done DONE">DONE</span> 范围内距离起点路程最短的敌人<br  /><div class="outline-text-5" id="text-4-2-4-9">
 <p>
-skill_select: CLOSE_TO_BEGIN
+target_select: CLOSE_TO_BEGIN
 </p>
 </div>
 </li>
-<li><a id="sec-4-2-8-10" name="sec-4-2-8-10"></a><span class="done DONE">DONE</span> 范围内特定标签的敌人<br  /><div class="outline-text-5" id="text-4-2-8-10">
+<li><a id="sec-4-2-4-10" name="sec-4-2-4-10"></a><span class="done DONE">DONE</span> 范围内特定标签的敌人<br  /><div class="outline-text-5" id="text-4-2-4-10">
 <p>
 target_select: TAG
 </p>
@@ -505,7 +472,7 @@ target_select_arg(新加列): tag
 </p>
 </div>
 </li>
-<li><a id="sec-4-2-8-11" name="sec-4-2-8-11"></a><span class="done DONE">DONE</span> 范围内特定标签的友军<br  /><div class="outline-text-5" id="text-4-2-8-11">
+<li><a id="sec-4-2-4-11" name="sec-4-2-4-11"></a><span class="done DONE">DONE</span> 范围内特定标签的友军<br  /><div class="outline-text-5" id="text-4-2-4-11">
 <p>
 target_select: TAG
 </p>
@@ -516,106 +483,141 @@ target_select_arg(新加列): tag
 </div>
 </li></ol>
 </div>
-<div id="outline-container-sec-4-2-9" class="outline-4">
-<h4 id="sec-4-2-9"><span class="section-number-4">4.2.9</span> <span class="todo TODO">TODO</span> 子弹移动方式 <code>[50%]</code></h4>
-<div class="outline-text-4" id="text-4-2-9">
-</div><ol class="org-ol"><li><a id="sec-4-2-9-1" name="sec-4-2-9-1"></a><span class="todo TODO">TODO</span> 曲线,圆形,螺旋形<br  /></li>
-<li><a id="sec-4-2-9-2" name="sec-4-2-9-2"></a><span class="done DONE">DONE</span> 沿道路向出怪点移动<br  /><div class="outline-text-5" id="text-4-2-9-2">
+<div id="outline-container-sec-4-2-5" class="outline-4">
+<h4 id="sec-4-2-5"><span class="section-number-4">4.2.5</span> <span class="todo TODO">TODO</span> 子弹移动方式 <code>[75%]</code></h4>
+<div class="outline-text-4" id="text-4-2-5">
+</div><ol class="org-ol"><li><a id="sec-4-2-5-1" name="sec-4-2-5-1"></a><span class="done DONE">DONE</span> 曲线,圆形,螺旋形<br  /><div class="outline-text-5" id="text-4-2-5-1">
+<p>
+编辑器中编辑轨迹动画并添加reach点, 将生成的动画clip设置为子弹的默认动画clip,技能表中MOVE_TYPE: ANIMATION 或者 ANIMATION_LOOP(循环)
+</p>
+</div>
+</li>
+
+<li><a id="sec-4-2-5-2" name="sec-4-2-5-2"></a><span class="done DONE">DONE</span> 沿道路向出怪点移动<br  /><div class="outline-text-5" id="text-4-2-5-2">
 <p>
 move_type: PATH_TO_BEGIN
 </p>
 </div>
 </li>
-<li><a id="sec-4-2-9-3" name="sec-4-2-9-3"></a><span class="done DONE">DONE</span> 沿道路向目标点移动<br  /><div class="outline-text-5" id="text-4-2-9-3">
+<li><a id="sec-4-2-5-3" name="sec-4-2-5-3"></a><span class="done DONE">DONE</span> 沿道路向目标点移动<br  /><div class="outline-text-5" id="text-4-2-5-3">
 <p>
 move_type: PATH_TO_END
 </p>
 </div>
 </li>
-<li><a id="sec-4-2-9-4" name="sec-4-2-9-4"></a><span class="todo TODO">TODO</span> 沿着道路朝目标点方向移动(不追踪)<br  /></li></ol>
+<li><a id="sec-4-2-5-4" name="sec-4-2-5-4"></a><span class="todo TODO">TODO</span> 沿着道路朝目标点方向移动(不追踪)<br  /></li></ol>
 </div>
-<div id="outline-container-sec-4-2-10" class="outline-4">
-<h4 id="sec-4-2-10"><span class="section-number-4">4.2.10</span> <span class="done DONE">DONE</span> 技能机制,目标追踪</h4>
-<div class="outline-text-4" id="text-4-2-10">
+<div id="outline-container-sec-4-2-6" class="outline-4">
+<h4 id="sec-4-2-6"><span class="section-number-4">4.2.6</span> <span class="todo TODO">TODO</span> 改变怪物 <code>[50%]</code></h4>
+<div class="outline-text-4" id="text-4-2-6">
+</div><ol class="org-ol"><li><a id="sec-4-2-6-1" name="sec-4-2-6-1"></a><span class="done DONE">DONE</span> 体型缩放<br  /><div class="outline-text-5" id="text-4-2-6-1">
 <p>
-stick_target: TRUE代表追踪
+buff效果 SCALE_TO 参数1:时间 参数2:缩放倍数
 </p>
 </div>
+</li>
+<li><a id="sec-4-2-6-2" name="sec-4-2-6-2"></a><span class="todo TODO">TODO</span> 高度改变(击飞)<br  /><div class="outline-text-5" id="text-4-2-6-2">
+<p>
+buff效果 NO_MOVE 参数1:时间
+</p>
+</div>
+</li>
+
+<li><a id="sec-4-2-6-3" name="sec-4-2-6-3"></a><span class="todo TODO">TODO</span> 行动方式<br  /></li>
+<li><a id="sec-4-2-6-4" name="sec-4-2-6-4"></a><span class="done DONE">DONE</span> 沿着道路位移<br  /><div class="outline-text-5" id="text-4-2-6-4">
+<p>
+buff效果 PUSH_FORWARD 参数1:时间 参数2:距离
+</p>
+
+<p>
+buff效果 PUSH_BACKWARD 参数1:时间 参数2:距离
+</p>
+
+<p>
+buff效果 THROW_FORWARD 参数1:时间 参数2:距离
+</p>
+
+<p>
+buff效果 THROW_BACKWARD 参数1:时间 参数2:距离
+</p>
+</div>
+</li></ol>
+</div>
+<div id="outline-container-sec-4-2-7" class="outline-4">
+<h4 id="sec-4-2-7"><span class="section-number-4">4.2.7</span> <span class="todo TODO">TODO</span> 技能释放条件 <code>[55%]</code></h4>
+<div class="outline-text-4" id="text-4-2-7">
+</div><ol class="org-ol"><li><a id="sec-4-2-7-1" name="sec-4-2-7-1"></a><span class="done DONE">DONE</span> 特定体型目标<br  /><div class="outline-text-5" id="text-4-2-7-1">
+<p>
+技能目标选择 ACTOR_TAG
+</p>
+</div>
+</li>
+
+<li><a id="sec-4-2-7-2" name="sec-4-2-7-2"></a><span class="done DONE">DONE</span> 对地/对空<br  /><div class="outline-text-5" id="text-4-2-7-2">
+<p>
+技能目标选择 ACTOR_TAG
+</p>
+</div>
+</li>
+
+<li><a id="sec-4-2-7-3" name="sec-4-2-7-3"></a><span class="todo TODO">TODO</span> 概率性<br  /></li>
+<li><a id="sec-4-2-7-4" name="sec-4-2-7-4"></a><span class="todo TODO">TODO</span> 自身属性达到条件<br  /></li>
+<li><a id="sec-4-2-7-5" name="sec-4-2-7-5"></a><span class="todo TODO">TODO</span> 目标属性达到条件<br  /></li>
+<li><a id="sec-4-2-7-6" name="sec-4-2-7-6"></a><span class="done DONE">DONE</span> 自身某状态达到条件(层数)<br  /><div class="outline-text-5" id="text-4-2-7-6">
+<p>
+技能表caster_condition.type HAS_BUFF 参数1 buff id 参数2 最少层数
+</p>
+</div>
+</li>
+<li><a id="sec-4-2-7-7" name="sec-4-2-7-7"></a><span class="done DONE">DONE</span> 目标某状态达到条件(层数)<br  /><div class="outline-text-5" id="text-4-2-7-7">
+<p>
+技能表caster_condition.type HAS_BUFF 参数1 buff id 参数2 最少层数
+</p>
+</div>
+</li>
+<li><a id="sec-4-2-7-8" name="sec-4-2-7-8"></a><span class="todo TODO">TODO</span> 手动释放<br  /></li>
+<li><a id="sec-4-2-7-9" name="sec-4-2-7-9"></a><span class="done DONE">DONE</span> 技能释放次数(BUFF层数)达到XX<br  /><div class="outline-text-5" id="text-4-2-7-9">
+<p>
+技能表caster_condition.type HAS_BUFF 参数1 buff id 参数2 最少层数
+</p>
+</div>
+</li></ol>
+</div>
+<div id="outline-container-sec-4-2-8" class="outline-4">
+<h4 id="sec-4-2-8"><span class="section-number-4">4.2.8</span> <span class="todo TODO">TODO</span> 技能类型 <code>[66%]</code></h4>
+<div class="outline-text-4" id="text-4-2-8">
+</div><ol class="org-ol"><li><a id="sec-4-2-8-1" name="sec-4-2-8-1"></a><span class="done DONE">DONE</span> 召唤生物<br  /><div class="outline-text-5" id="text-4-2-8-1">
+<p>
+BUFF效果: SUMMON_TOWER 参数1: actor id 参数2: 等级
+</p>
+</div>
+</li>
+
+<li><a id="sec-4-2-8-2" name="sec-4-2-8-2"></a><span class="done DONE">DONE</span> 光环<br  /><div class="outline-text-5" id="text-4-2-8-2">
+<p>
+技能尺寸为光环的尺寸,进入(碰撞)加buff,离开删buff
+</p>
+</div>
+</li>
+
+<li><a id="sec-4-2-8-3" name="sec-4-2-8-3"></a><span class="todo TODO">TODO</span> 道路生物<br  /></li></ol>
+</div>
+
+<div id="outline-container-sec-4-2-9" class="outline-4">
+<h4 id="sec-4-2-9"><span class="section-number-4">4.2.9</span> <span class="done DONE">DONE</span> 满足开战条件时:开始战斗按钮判断是否可以开战,暂定开战条件为场上至少有1个葫芦娃,如果不能开战,出现提示,提示方面做一个带localizedlabel的prefab,里面显示提示内容</h4>
+</div>
+
+<div id="outline-container-sec-4-2-10" class="outline-4">
+<h4 id="sec-4-2-10"><span class="section-number-4">4.2.10</span> <span class="done DONE">DONE</span> 怪物及障碍物受到伤害后显示血条,若X秒内没有受到伤害则消失(暂定为3秒)</h4>
 </div>
 <div id="outline-container-sec-4-2-11" class="outline-4">
-<h4 id="sec-4-2-11"><span class="section-number-4">4.2.11</span> <span class="todo DL">DL</span> 塔座放置时自动调整位置到最近的格子上</h4>
-<div class="outline-text-4" id="text-4-2-11">
-<p>
-背景尺寸 1334 x 768
-</p>
-
-<p>
-按左上角为 (0, 0) 点算,第一个格子的左上角位于 (147, 80)
-</p>
-
-<p>
-格子大小 80 x 80
-</p>
-
-<p>
-所有格子组成的区域是 1040 x 560
-</p>
-</div>
+<h4 id="sec-4-2-11"><span class="section-number-4">4.2.11</span> <span class="todo DL">DL</span> 点击暂停按钮:按钮变化为播放按钮,界面战斗暂停,点击播放按钮继续战斗</h4>
 </div>
 <div id="outline-container-sec-4-2-12" class="outline-4">
-<h4 id="sec-4-2-12"><span class="section-number-4">4.2.12</span> <span class="todo TODO">TODO</span> 场景中的鱼动画随机,播完之后 暂定大概10秒加一个随机值</h4>
+<h4 id="sec-4-2-12"><span class="section-number-4">4.2.12</span> <span class="done DONE">DONE</span> 点击快进:按钮显示2X,战斗X倍速(暂定为2倍).再次点击变为正常速度</h4>
 </div>
 <div id="outline-container-sec-4-2-13" class="outline-4">
-<h4 id="sec-4-2-13"><span class="section-number-4">4.2.13</span> <span class="todo TODO">TODO</span> 场景中荷叶动画延时</h4>
-</div>
-<div id="outline-container-sec-4-2-14" class="outline-4">
-<h4 id="sec-4-2-14"><span class="section-number-4">4.2.14</span> <span class="todo TODO">TODO</span> 场景中龟壳播动画每秒几率播放</h4>
-</div>
-</div>
-
-<div id="outline-container-sec-4-3" class="outline-3">
-<h3 id="sec-4-3"><span class="section-number-3">4.3</span> 网站</h3>
-<div class="outline-text-3" id="text-4-3">
-</div><div id="outline-container-sec-4-3-1" class="outline-4">
-<h4 id="sec-4-3-1"><span class="section-number-4">4.3.1</span> <span class="todo TODO">TODO</span> 文档</h4>
-<div class="outline-text-4" id="text-4-3-1">
-</div><ol class="org-ol"><li><a id="sec-4-3-1-1" name="sec-4-3-1-1"></a><span class="todo TODO">TODO</span> 战斗地图配置 <code>[0%]</code><br  /><div class="outline-text-5" id="text-4-3-1-1">
-<ul class="org-ul">
-<li><code>[&#xa0;]</code> 基础配置
-</li>
-<li><code>[&#xa0;]</code> 配置塔
-</li>
-<li><code>[&#xa0;]</code> 配置怪物
-<ul class="org-ul">
-<li><code>[&#xa0;]</code> 配置路线
-</li>
-<li><code>[&#xa0;]</code> 配置怪物
-</li>
-</ul>
-</li>
-</ul>
-</div>
-</li>
-<li><a id="sec-4-3-1-2" name="sec-4-3-1-2"></a><span class="todo TODO">TODO</span> 配置表说明 <code>[0%]</code><br  /><div class="outline-text-5" id="text-4-3-1-2">
-<ul class="org-ul">
-<li><code>[&#xa0;]</code> actor表
-</li>
-<li><code>[&#xa0;]</code> skill表
-</li>
-<li><code>[&#xa0;]</code> buff表
-</li>
-</ul>
-</div>
-</li>
-<li><a id="sec-4-3-1-3" name="sec-4-3-1-3"></a><span class="todo TODO">TODO</span> 碰撞以及碰撞组<br  /></li></ol>
-</div>
-<div id="outline-container-sec-4-3-2" class="outline-4">
-<h4 id="sec-4-3-2"><span class="section-number-4">4.3.2</span> <span class="todo TODO">TODO</span> 工具</h4>
-</div>
-<div id="outline-container-sec-4-3-3" class="outline-4">
-<h4 id="sec-4-3-3"><span class="section-number-4">4.3.3</span> <span class="todo TODO">TODO</span> 人员联系表</h4>
-<div class="outline-text-4" id="text-4-3-3">
-</div>
+<h4 id="sec-4-2-13"><span class="section-number-4">4.2.13</span> <span class="todo DL">DL</span> 制作怪物掉落甘露的UI效果,请参照保卫萝卜3中的怪物死亡时候相同的表现还有我们UI的示意图</h4>
 </div>
 </div>
 </div>
@@ -724,8 +726,16 @@ URL填入项目地址 -&gt; 确定
 </p>
 </div>
 </div>
-</div>
 
+<div id="outline-container-sec-5-6" class="outline-3">
+<h3 id="sec-5-6"><span class="section-number-3">5.6</span> 推荐安装并使用bitbucket提供的客户端</h3>
+<div class="outline-text-3" id="text-5-6">
+<p>
+<a href="https://downloads.atlassian.com/software/sourcetree/windows/SourceTreeSetup_1.9.6.2.exe?_ga=1.156178623.521041457.1480648963">SourceTree</a>
+</p>
+</div>
+</div>
+</div>
 
 
 <div id="outline-container-sec-6" class="outline-2">
@@ -801,6 +811,7 @@ URL填入项目地址 -&gt; 确定
 </div>
 </div>
 
+
 <div id="outline-container-sec-6-4" class="outline-3">
 <h3 id="sec-6-4"><span class="section-number-3">6.4</span> GIT</h3>
 <div class="outline-text-3" id="text-6-4">
@@ -809,7 +820,45 @@ URL填入项目地址 -&gt; 确定
 </p>
 </div>
 </div>
+
+
+<div id="outline-container-sec-6-5" class="outline-3">
+<h3 id="sec-6-5"><span class="section-number-3">6.5</span> 编辑器</h3>
+<div class="outline-text-3" id="text-6-5">
+</div><div id="outline-container-sec-6-5-1" class="outline-4">
+<h4 id="sec-6-5-1"><span class="section-number-4">6.5.1</span> 删除对象</h4>
+<div class="outline-text-4" id="text-6-5-1">
+<p>
+不再使用的对象如果只是设置 parent = null 是不足以删除它的,需要调用 destroy.
+</p>
 </div>
+</div>
+
+<div id="outline-container-sec-6-5-2" class="outline-4">
+<h4 id="sec-6-5-2"><span class="section-number-4">6.5.2</span> removeFromParent与destroy的区别</h4>
+<div class="outline-text-4" id="text-6-5-2">
+<p>
+destroy 后，节点不可用。
+</p>
+
+<p>
+removeFromParent 后，节点可重新 add 回场景中。
+</p>
+
+<p>
+当节点要销毁时，请 destroy。
+</p>
+
+<p>
+当节点要**暂时**从场景中移除，请 removeFromParent。
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
 
 
 <div id="outline-container-sec-7" class="outline-2">
@@ -884,7 +933,7 @@ URL填入项目地址 -&gt; 确定
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2016-11-18 Fri 18:15</p>
+<p class="date">Created: 2016-12-20 Tue 14:01</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
