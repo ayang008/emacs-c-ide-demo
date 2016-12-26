@@ -35,7 +35,7 @@
 (require 'setup-web)
 (require 'setup-smex)
 (require 'setup-magit)
-(require 'setup-ace-window)
+;(require 'setup-ace-window)
 (require 'setup-org)
 (require 'setup-theme)
 (require 'setup-hungry-delete)
