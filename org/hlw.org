@@ -24,17 +24,10 @@ PC和手机都可以访问
 
 * 项目管理
 ** 服务器
-*** Kilen 服务器进程IP和端口规划
-**** TODO 所有测试改用测试专用IP和端口
-**** TODO 加入新的配置脚本,输入IP和端口,自动更新所有启动和停止脚本
-*** TODO 玩家角色使用gid作为主键,目前使用的是名字 [0%]
-- [ ] 角色类中加入gid以及获取接口,创建角色时给予新的gid
-- [ ] 数据库角色表加入gid
-- [ ] 全局将角色名字作为key的结构改为使用gid,包括协议
 *** TODO 脏字过滤
 加入脏字过滤功能类
 
-*** Kilen 聊天 [0%]
+*** TODO 聊天 [0%]
 - [ ] 聊天服务器进程,并与scene连接
 
 - [ ] 全世界频道(无过滤)
@@ -56,102 +49,37 @@ PC和手机都可以访问
 - [ ] 服务器富文本
 *** TODO 好友
 *** TODO 工会
-*** TODO 战斗检验
 *** TODO 集成测试
 *** TODO 压力测试
 *** TODO 战斗过程服务器检查
+*** Kilen configure脚本支持指定角色数据库名称
+*** TODO 日志记录，日志数据库
+*** TODO 数据库BLOB，TINYBLOB字段'\0'字符测试
+
 ** 客户端
-*** TODO 枚举使用cc.Enum
-*** TODO 路径配置怪物部分从编辑器移出到新表，并加入血量和速度
-*** TODO 地图初始动画播放
-*** TODO 技能机制,目标选择[81%]
-**** DONE 范围内最远的敌人
-target_select: FAREST
-**** DONE 范围内血量(百分比)最多的敌人
-target_select: MOST_HP MOST_HP_PERCENT
-**** DONE 范围内血量(百分比)最少的敌人
-target_select: LEAST_HP LEAST_HP_PERCENT
-**** DONE 范围内移动速度(当前值)最快的敌人
-target_select: FASTEST
-**** DONE 范围内移动速度(当前值)最慢的敌人
-target_select: SLOWEST
-**** Aaron 范围内目标体型最大的敌人
-**** Aaron 范围内目标体型最小的敌人
-**** DONE 范围内距离终点路程最短的敌人
-target_select: CLOSE_TO_END
-**** DONE 范围内距离起点路程最短的敌人
-target_select: CLOSE_TO_BEGIN
-**** DONE 范围内特定标签的敌人
-target_select: TAG
+*** Cage 战斗单局
+手动施放技能
 
-target_select_arg(新加列): tag
-**** DONE 范围内特定标签的友军
-target_select: TAG
+回合CD机制
 
-target_select_arg(新加列): tag
-*** TODO 子弹移动方式 [75%]
-**** DONE 曲线,圆形,螺旋形
-编辑器中编辑轨迹动画并添加reach点, 将生成的动画clip设置为子弹的默认动画clip,技能表中MOVE_TYPE: ANIMATION 或者 ANIMATION_LOOP(循环)
+配合Linc随时实现技能需求
 
-**** DONE 沿道路向出怪点移动
-move_type: PATH_TO_BEGIN
-**** DONE 沿道路向目标点移动
-move_type: PATH_TO_END
-**** TODO 沿着道路朝目标点方向移动(不追踪)
-*** TODO 改变怪物 [50%]
-**** DONE 体型缩放
-buff效果 SCALE_TO 参数1:时间 参数2:缩放倍数
-**** TODO 高度改变(击飞)
-buff效果 NO_MOVE 参数1:时间
+*** DL 玩家相关
+角色创建
 
-**** TODO 行动方式
-**** DONE 沿着道路位移
-buff效果 PUSH_FORWARD 参数1:时间 参数2:距离
+捏脸
 
-buff效果 PUSH_BACKWARD 参数1:时间 参数2:距离
+换装
 
-buff效果 THROW_FORWARD 参数1:时间 参数2:距离
-
-buff效果 THROW_BACKWARD 参数1:时间 参数2:距离
-*** TODO 技能释放条件 [55%]
-**** DONE 特定体型目标
-技能目标选择 ACTOR_TAG
-
-**** DONE 对地/对空
-技能目标选择 ACTOR_TAG
-
-**** TODO 概率性
-**** TODO 自身属性达到条件
-**** TODO 目标属性达到条件
-**** DONE 自身某状态达到条件(层数)
-技能表caster_condition.type HAS_BUFF 参数1 buff id 参数2 最少层数
-**** DONE 目标某状态达到条件(层数)
-技能表caster_condition.type HAS_BUFF 参数1 buff id 参数2 最少层数
-**** TODO 手动释放
-**** DONE 技能释放次数(BUFF层数)达到XX
-技能表caster_condition.type HAS_BUFF 参数1 buff id 参数2 最少层数
-*** TODO 技能类型 [66%]
-**** DONE 召唤生物
-BUFF效果: SUMMON_TOWER 参数1: actor id 参数2: 等级
-
-**** DONE 光环
-技能尺寸为光环的尺寸,进入(碰撞)加buff,离开删buff
-
-**** TODO 道路生物
-
-*** DONE 满足开战条件时:开始战斗按钮判断是否可以开战,暂定开战条件为场上至少有1个葫芦娃,如果不能开战,出现提示,提示方面做一个带localizedlabel的prefab,里面显示提示内容
-
-*** DONE 怪物及障碍物受到伤害后显示血条,若X秒内没有受到伤害则消失(暂定为3秒)
-*** DL 点击暂停按钮:按钮变化为播放按钮,界面战斗暂停,点击播放按钮继续战斗
-*** DONE 点击快进:按钮显示2X,战斗X倍速(暂定为2倍).再次点击变为正常速度
-*** DL 制作怪物掉落甘露的UI效果,请参照保卫萝卜3中的怪物死亡时候相同的表现还有我们UI的示意图
+*** Alvin 商店抽奖
+商店抽奖与服务器联调
 
 
 * 开发环境搭建
 
 ** 编辑器
 
-[[http://cocostudio.download.appget.cn/CocosCreator/v1.3.0/CocosCreator_v1.3.0_2016102502_setup.exe][点击下载]]
+[[http://cocostudio.download.appget.cn/CocosCreator/v1.4.0/CocosCreator_v1.4.0_2017021001_setup.exe][点击下载编辑器]]
 
 运行下载的安装文件安装编辑器
 
@@ -175,9 +103,15 @@ BUFF效果: SUMMON_TOWER 参数1: actor id 参数2: 等级
 
 在任意空白处单击鼠标右键 -> TortoiseGit -> Settings -> Language 改成中文
 
-在"开始"->"搜索程序和文件"中输入git config --global user.name "你的bitbucket帐号",回车
+在"开始"->"搜索程序和文件"中输入
+#+BEGIN_EXAMPLE
+git config --global user.name "你的bitbucket帐号"
+#+END_EXAMPLE
 
-在"开始"->"搜索程序和文件"中输入git config --global user.email "你常用的邮箱",回车
+在"开始"->"搜索程序和文件"中输入
+#+BEGIN_EXAMPLE
+git config 杠杠global user.email "你常用的邮箱"
+#+END_EXAMPLE
 
 ** 使用git下载项目工程
 
@@ -190,13 +124,63 @@ BUFF效果: SUMMON_TOWER 参数1: actor id 参数2: 等级
 URL填入项目地址 -> 确定
 
 输入bitbucket邮箱,密码 -> 确定
-
 ** 使用编辑器打开项目
 
  打开编辑器(Cocos creator)
 
  选择打开其他项目,选择项目路径(如:d:\client)并点击选择文件夹
   
+** 定制引擎(非必须, 捏脸需要)
+
+*** 下载必要软件
+
+[[https://www.visualstudio.com/zh-hans/post-download-vs/?sku=community&clcid=0x804&telem=ga#][点击下载vs]]
+
+安装vs
+
+[[https://nodejs.org/dist/v6.9.5/node-v6.9.5-x64.msi][点击下载nodejs]]
+
+安装nodejs
+
+参照之前的做法，使用Git下载下面两个引擎
+
+A: https://github.com/ayang008/engine.git 到d盘
+
+B: https://github.com/ayang008/cocos2d-x-lite.git 到d盘
+
+在两个引擎的目录都执行下面的命令, 切换到1.4分支
+#+BEGIN_EXAMPLE
+git checkout -b v1.4 --track origin/v1.4
+#+END_EXAMPLE
+
+*** 定制
+
+在"开始"->"搜索程序和文件"中输入node, 运行Node.js command prompt
+
+进入引擎A的目录(如,依次输入d:回车,cd engine回车,可以进入d:\engine目录)
+#+BEGIN_EXAMPLE
+npm install -g gulp
+
+npm install
+
+gulp build
+#+END_EXAMPLE
+
+进入引擎B的目录
+#+BEGIN_EXAMPLE
+npm install
+
+python download-deps.py
+
+git submodule update 杠杠init
+
+gulp gen-simulator
+
+gulp update-simulator-config
+#+END_EXAMPLE
+
+在编辑器偏好设置面板的原生开发幻境分页中设置使用本地定制引擎engine和cocos2d-x-lite, d:\engine和d:\cocos2d-x-lite
+
 ** 推荐安装并使用bitbucket提供的客户端
 
 [[https://downloads.atlassian.com/software/sourcetree/windows/SourceTreeSetup_1.9.6.2.exe?_ga=1.156178623.521041457.1480648963][SourceTree]]
