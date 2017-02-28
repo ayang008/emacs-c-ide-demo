@@ -11,7 +11,7 @@
                                (find-file (file-name-as-directory (concat user-emacs-directory "org")))))
 
 (setq org-todo-keywords
-      '((type "TODO" "Amber(m)" "Aaron(a)" "Linc(l)" "DL(u)" "Alvin(v)" "Kilen(k)" "Cage(c)" "|" "DONE")))
+      '((type "TODO" "Aaron(a)" "DL(l)" "Alvin(v)" "Kilen(k)" "Cage(c)" "Charlie(h)" "Pysong(p)" "|" "DONE")))
 
 (setq org-startup-indented t)
 
