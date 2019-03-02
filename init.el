@@ -2,8 +2,6 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
-(add-to-list 'package-archives
-             '("melpa-cn" . "http://elpa.zilongshanren.com/melpa/") t)
 
 (package-initialize)
 
@@ -15,6 +13,7 @@
 
 (require 'use-package)
 (setq use-package-always-ensure t)
+(setq package-check-signature nil)
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 
